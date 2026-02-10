@@ -1,14 +1,18 @@
-import Image from "next/image";
+import Hero from "../components/sections/Hero"; // Importamos el componente que creamos
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24 bg-altivea-light">
-      <h1 className="font-heading text-4xl text-altivea-blue font-bold">
-        Hola Altivea 🚀
-      </h1>
-      <button className="bg-altivea-accent text-white px-6 py-2 rounded mt-4">
-        Empezar Proyecto
-      </button>
+    <main className="flex flex-col min-h-screen">
+      
+      {/* Aquí mostramos el Hero */}
+      <Hero />
+      
+      {/* Espacio temporal para ver que la página sigue hacia abajo */}
+      <div className="py-20 text-center bg-white text-slate-400">
+        <h2 className="text-2xl font-bold mb-4">Nuestros Servicios</h2>
+        <p>(Pronto construiremos esta sección...)</p>
+      </div>
+
     </main>
   );
 }
