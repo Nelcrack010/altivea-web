@@ -1,18 +1,31 @@
 import Hero from "../components/sections/Hero"; // Importamos el componente que creamos
+import Services from '../components/sections/Services';
+import QueHacemos from '../components/sections/QueHacemos';
+import PorqueElegirnos from '../components/sections/PorqueElegirnos';
+import NuestroEquipo from '../components/sections/NuestroEquipo';
+import Piesas from '../components/sections/footer';
+import ScrollReveal from '../components/sections/ScrollReveal'
 
 export default function Home() {
   return (
     <main className="flex flex-col min-h-screen">
-      
-      {/* Aquí mostramos el Hero */}
       <Hero />
-      
-      {/* Espacio temporal para ver que la página sigue hacia abajo */}
-      <div className="py-20 text-center bg-white text-slate-400">
-        <h2 className="text-2xl font-bold mb-4">Nuestros Servicios</h2>
-        <p>(Pronto construiremos esta sección...)</p>
-      </div>
 
+      <ScrollReveal>
+        <QueHacemos/>
+      </ScrollReveal>
+
+      <ScrollReveal>
+        <PorqueElegirnos/>
+      </ScrollReveal>
+
+      <ScrollReveal>
+        <NuestroEquipo/>
+      </ScrollReveal>
+
+      <ScrollReveal>
+        <Piesas/>
+      </ScrollReveal>
     </main>
   );
 }
