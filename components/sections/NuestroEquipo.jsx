@@ -1,65 +1,136 @@
 import React from 'react';
-import { Accessibility, User } from 'lucide-react';
+import { Facebook, Instagram, Linkedin, Mail } from 'lucide-react';
+import ScrollReveal from './ScrollReveal';
 
 export default function NuestroEquipo() {
+// Aquí definimos los datos y las rutas de las fotos.
+// Asegúrate de guardar las fotos en la carpeta "public" con estos nombres.
+const teamMembers = [
+    { 
+    name: "Luz Mimbela", 
+    role: "Área de Finanzas", 
+    img: "/foto-luz.jpg", // <--- Cambia esto por el nombre real de tu foto
+    delay: 100 
+    },
+    { 
+    name: "Mauricio Guerrero", 
+    role: "Área de I+D", 
+    img: "/foto-mauricio.jpg", 
+    delay: 200 
+    },
+    { 
+    name: "Eduardo Ortiz", 
+    role: "Innovación", 
+    img: "/foto-eduardo.jpg", 
+    delay: 300 
+    },
+    { 
+    name: "Nelson Siancas", 
+    role: "Tecnología", 
+    img: "/foto-nelson.jpg", 
+    delay: 400 
+    },
+];
+
 return (
-    <section className="py-24 bg-slate-100 text-slate-900">
-    <div className="max-w-6xl mx-auto px-6">
+    <section className="py-24 bg-slate-50 text-slate-900 relative overflow-hidden">
+    
+    {/* Fondo decorativo */}
+    <div className="absolute top-0 left-0 w-full h-full overflow-hidden opacity-30 pointer-events-none">
+        <div className="absolute -left-20 top-40 w-96 h-96 bg-blue-100 rounded-full blur-3xl mix-blend-multiply" />
+        <div className="absolute right-0 bottom-20 w-80 h-80 bg-cyan-100 rounded-full blur-3xl mix-blend-multiply" />
+    </div>
+
+    <div className="max-w-6xl mx-auto px-6 relative z-10">
         
-        {/* TÍTULO */}
+        <ScrollReveal>
         <div className="text-center mb-16">
-        <h2 className="text-3xl md:text-4xl font-bold mb-4">Nuestro Equipo</h2>
-        <p className="text-slate-500">
-            Conoce a los expertos detrás de cada estrategia.
-        </p>
-        </div>
-
-        {/* 1. LÍDER (Luis Aguilar) - Centrado y Destacado */}
-        <div className="flex justify-center mb-12">
-        <div className="bg-white p-10 rounded-2xl shadow-md text-center max-w-sm w-full border border-slate-200 hover:-translate-y-2 transition-transform duration-300">
-            {/* Icono Grande */}
-            <div className="flex justify-center mb-6">
-            <Accessibility size={80} strokeWidth={1.5} className="text-slate-900" />
-            </div>
-            
-            <h3 className="text-2xl font-bold text-slate-900 mb-1">Luis Aguilar</h3>
-            <p className="text-blue-600 font-semibold text-sm uppercase tracking-wider mb-2">
-            Gerente General
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">Nuestro Equipo</h2>
+            <p className="text-slate-500">
+            Expertos reales impulsando tu negocio.
             </p>
-            <span className="text-slate-500 text-sm">(Área de Marketing)</span>
         </div>
-        </div>
+        </ScrollReveal>
 
-        {/* 2. EL RESTO DEL EQUIPO (Grid de 4) */}
+        {/* 1. EL LÍDER (CEO) - FOTO GRANDE */}
+        <ScrollReveal>
+        <div className="flex justify-center mb-16">
+            <div className="group relative bg-white p-1 rounded-2xl shadow-xl max-w-sm w-full text-center transition-all duration-500 hover:-translate-y-2">
+            
+            {/* Borde Degradado Animado */}
+            <div className="absolute inset-0 rounded-2xl p-[2px] bg-gradient-to-r from-blue-600 via-cyan-400 to-blue-600 bg-[length:200%_200%] animate-gradient-xy -z-10" />
+            
+            <div className="bg-white rounded-xl h-full w-full p-8 flex flex-col items-center relative overflow-hidden">
+                
+                {/* FOTO CEO */}
+                <div className="w-32 h-32 mb-6 rounded-full p-1 bg-gradient-to-tr from-blue-600 to-cyan-400">
+                <img 
+                    src="/foto-luis.jpg" // <--- Pon aquí la foto de Luis
+                    alt="Luis Aguilar"
+                    className="w-full h-full rounded-full object-cover border-2 border-white"
+                />
+                </div>
+                
+                <h3 className="text-2xl font-bold text-slate-900">Luis Aguilar</h3>
+                <p className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-cyan-500 font-bold text-sm uppercase tracking-wider mb-2">
+                Gerente General
+                </p>
+                <span className="text-slate-400 text-xs mb-6">Visionario & Estratega</span>
+
+                {/* Redes Sociales CEO */}
+                <div className="flex gap-4 justify-center">
+                <a href="#" className="p-2 rounded-full bg-slate-100 text-slate-600 hover:bg-blue-600 hover:text-white transition-all"><Linkedin size={18} /></a>
+                <a href="#" className="p-2 rounded-full bg-slate-100 text-slate-600 hover:bg-blue-600 hover:text-white transition-all"><Mail size={18} /></a>
+                <a href="#" className="p-2 rounded-full bg-slate-100 text-slate-600 hover:bg-blue-600 hover:text-white transition-all"><Instagram size={20} /></a>
+                <a href="https://www.facebook.com/luisfrancisco.aguilardiaz.39" className="p-2 rounded-full bg-slate-100 text-slate-600 hover:bg-blue-600 hover:text-white transition-all"><Facebook size={20} /></a>
+                </div>
+            </div>
+            </div>
+        </div>
+        </ScrollReveal>
+
+        {/* 2. EL EQUIPO (GRID) */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
         
-        {/* Luz Mimbela */}
-        <div className="bg-white p-6 rounded-xl shadow-sm border border-slate-200 text-center hover:shadow-lg transition-shadow duration-300 flex flex-col items-center">
-            <User size={50} strokeWidth={1.5} className="mb-4 text-slate-800" />
-            <h4 className="font-bold text-lg mb-1">Luz Montalico</h4>
-            <p className="text-slate-500 text-sm">Área de Finanzas</p>
-        </div>
+        {teamMembers.map((member, index) => (
+            
+            <ScrollReveal key={index} delay={member.delay}>
+            <div className="group relative bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden hover:shadow-lg transition-all duration-300 h-full">
+                
+                {/* AQUÍ ESTÁ EL TRUCO DEL ESPACIO:
+                'pt-8 px-6 pb-20' -> Mucho padding abajo (pb-20) para dejar sitio a la barra negra
+                */}
+                <div className="pt-8 px-6 pb-20 flex flex-col items-center text-center">
+                
+                {/* FOTO MIEMBRO */}
+                {/* grayscale group-hover:grayscale-0 -> Efecto de B/N a Color */}
+                <div className="mb-4 w-24 h-24 rounded-full overflow-hidden border-2 border-slate-100 group-hover:border-blue-400 transition-all duration-300">
+                    <img 
+                    src={member.img} 
+                    alt={member.name}
+                    className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500 transform group-hover:scale-110"
+                    />
+                </div>
+                
+                <h4 className="font-bold text-lg mb-1 text-slate-900 group-hover:text-blue-600 transition-colors">
+                    {member.name}
+                </h4>
+                <p className="text-slate-500 text-xs uppercase tracking-wide">
+                    {member.role}
+                </p>
+                </div>
 
-        {/* Mauricio Guerrero */}
-        <div className="bg-white p-6 rounded-xl shadow-sm border border-slate-200 text-center hover:shadow-lg transition-shadow duration-300 flex flex-col items-center">
-            <User size={50} strokeWidth={1.5} className="mb-4 text-slate-800" />
-            <h4 className="font-bold text-lg mb-1">Mauricio Guerrero</h4>
-            <p className="text-slate-500 text-sm">Área de I+D</p>
-        </div>
+                {/* BARRA "REVEAL" - Ahora tiene espacio libre abajo para aparecer sin tapar nada */}
+                <div className="absolute bottom-0 left-0 w-full bg-slate-900 text-white py-4 flex justify-center gap-6 translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-out">
+                    <a href="#" className="hover:text-blue-400 transition-colors"><Linkedin size={20} /></a>
+                    <a href="#" className="hover:text-blue-400 transition-colors"><Mail size={20} /></a>
+                    <a href="#" className="hover:text-blue-400 transition-colors"><Instagram size={20} /></a>
+                </div>
 
-        {/* Eduardo Ortiz */}
-        <div className="bg-white p-6 rounded-xl shadow-sm border border-slate-200 text-center hover:shadow-lg transition-shadow duration-300 flex flex-col items-center">
-            <User size={50} strokeWidth={1.5} className="mb-4 text-slate-800" />
-            <h4 className="font-bold text-lg mb-1">Eduardo Ortiz</h4>
-            <p className="text-slate-500 text-sm">Innovación y Creatividad</p>
-        </div>
+            </div>
+            </ScrollReveal>
 
-        {/* Nelson Siancas */}
-        <div className="bg-white p-6 rounded-xl shadow-sm border border-slate-200 text-center hover:shadow-lg transition-shadow duration-300 flex flex-col items-center">
-            <User size={50} strokeWidth={1.5} className="mb-4 text-slate-800" />
-            <h4 className="font-bold text-lg mb-1">Nelson Juarez</h4>
-            <p className="text-slate-500 text-sm">Área de Tecnología</p>
-        </div>
+        ))}
 
         </div>
 

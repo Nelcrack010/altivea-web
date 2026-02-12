@@ -1,73 +1,75 @@
 import React from 'react';
 import { Megaphone, Code, Briefcase } from 'lucide-react';
+import ScrollReveal from './ScrollReveal'; // <--- Importante
 
 export default function QueHacemos() {
 const services = [
-    {
-    // Usamos el mismo azul (blue-600) como color base para la transición
+{
     icon: <Megaphone size={64} strokeWidth={1.5} />,
     title: "Marketing Digital",
-    description: "Estrategias que conectan marcas con clientes ideales."
-    },
-    {
+    description: "Estrategias que conectan marcas con clientes ideales.",
+    delay: 0 // Aparece de inmediato
+},
+{
     icon: <Code size={64} strokeWidth={1.5} />,
     title: "Desarrollo Web",
-    description: "Sitios rápidos, modernos y optimizados para ventas."
-    },
-    {
+    description: "Sitios rápidos, modernos y optimizados para ventas.",
+    delay: 200 // Espera 200ms
+},
+{
     icon: <Briefcase size={64} strokeWidth={1.5} />,
     title: "Automatización",
-    description: "Sistemas modernos y soluciones escalables."
-    }
+    description: "Sistemas modernos y soluciones escalables.",
+    delay: 400 // Espera 400ms (Efecto escalera)
+}
 ];
 
 return (
-    <section className="py-24 bg-white text-slate-900">
+// CAMBIO 1: Fondo con un degradado sutil en vez de blanco puro
+<section className="py-24 bg-gradient-to-b from-white via-slate-50 to-white text-slate-900 relative overflow-hidden">
+    
+    {/* CAMBIO 2: Decoración de fondo (Mancha de color azul muy suave) */}
+    <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[500px] bg-blue-400/10 blur-[120px] rounded-full -z-10" />
+
     <div className="max-w-6xl mx-auto px-6">
-        
-        {/* TÍTULO SIMPLE Y LIMPIO */}
+    
+    <ScrollReveal>
         <h2 className="text-4xl md:text-5xl font-bold text-center mb-16 text-slate-900">
         ¿Qué Hacemos?
         </h2>
+    </ScrollReveal>
 
-        {/* GRID DE TARJETAS */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+    <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
         {services.map((item, index) => (
+        // CAMBIO 3: Envolvemos cada tarjeta con su delay
+        <ScrollReveal key={index} delay={item.delay}>
             <div 
-            key={index} 
-            // group: permite controlar los hijos al pasar el mouse sobre el padre
-            // hover:-translate-y-2: Elevación sutil
-            // hover:border-blue-600: Cambio de borde a azul
-            // hover:bg-white: Un ligero cambio de fondo para dar "luz"
-            className="group bg-slate-50 rounded-2xl p-10 border border-slate-200 transition-all duration-300 ease-in-out hover:-translate-y-2 hover:border-blue-600 hover:bg-white hover:shadow-sm"
+            className="group bg-white rounded-2xl p-10 border border-slate-100 shadow-sm 
+            transition-all duration-500 ease-out 
+            hover:-translate-y-4 hover:shadow-[0_20px_40px_-15px_rgba(37,99,235,0.2)] hover:border-blue-200 relative overflow-hidden"
             >
-            {/* CONTENIDO CENTRADO */}
-            <div className="flex flex-col items-center text-center">
-                
-                {/* ICONO */}
-                {/* group-hover:text-blue-600: El icono se vuelve azul */}
-                {/* group-hover:scale-105: Un mini efecto de crecimiento */}
-                <div className="mb-6 text-slate-700 transition-all duration-300 group-hover:text-blue-600 group-hover:scale-105">
+            {/* Barrita superior de color (Detalle Tech) */}
+            <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-blue-600 to-cyan-400 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" />
+
+            <div className="flex flex-col items-center text-center relative z-10">
+                <div className="mb-6 text-slate-400 transition-all duration-500 group-hover:text-blue-600 group-hover:scale-110 group-hover:rotate-3">
                 {item.icon}
                 </div>
                 
-                {/* TÍTULO */}
-                {/* group-hover:text-blue-600: El título también se vuelve azul */}
-                <h3 className="text-2xl font-bold mb-4 text-slate-900 transition-colors duration-300 group-hover:text-blue-600">
+                <h3 className="text-2xl font-bold mb-4 text-slate-900 transition-colors duration-300 group-hover:text-blue-700">
                 {item.title}
                 </h3>
                 
-                {/* DESCRIPCIÓN */}
-                <p className="text-slate-500 text-sm leading-relaxed max-w-xs">
+                <p className="text-slate-500 text-sm leading-relaxed max-w-xs group-hover:text-slate-600">
                 {item.description}
                 </p>
-
             </div>
             </div>
+        </ScrollReveal>
         ))}
-        </div>
+    </div>
 
     </div>
-    </section>
+</section>
 );
 }
