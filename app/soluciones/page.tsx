@@ -3,6 +3,7 @@ import HeroSoluciones from '../../components/Soluciones/HeroSoluciones';
 import Metodologia from '../../components/Soluciones/Metodologia';
 import Paquetes from '../../components/Soluciones/Paquetes';
 import ScrollReveal from '../../components/sections/ScrollReveal';
+import Piesas from '../../components/sections/footer';
 
 export default function SolucionesPage() {
 return (
@@ -19,6 +20,10 @@ return (
     {/* Paquetes con efecto ScrollReveal */}
     <ScrollReveal>
         <Paquetes />
+    </ScrollReveal>
+
+    <ScrollReveal>
+        <Piesas />
     </ScrollReveal>
 
     </main>

@@ -1,35 +1,92 @@
-import React from 'react';
+"use client";
+
+import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
+import { Sparkles } from 'lucide-react';
 
 export default function HeroSoluciones() {
-return (
-    <section className="relative w-full h-[50vh] flex items-center justify-center overflow-hidden">
+const [isNight, setIsNight] = useState(false);
+const [mounted, setMounted] = useState(false);
+
+useEffect(() => {
+    setMounted(true);
     
-    {/* 1. IMAGEN DE FONDO (Blanco y Negro) */}
+    // Mantenemos solo la lógica de Día/Noche para el video
+    const updateTime = () => {
+    const hour = new Date().getHours();
+    setIsNight(hour < 6 || hour >= 18);
+    };
+
+    updateTime(); 
+}, []);
+
+if (!mounted) return <div className="h-screen bg-slate-900" />;
+
+return (
+    <section className="relative w-full h-screen flex items-center justify-center overflow-hidden bg-black">
+    
+    {/* 1. VIDEO DE FONDO */}
     <div className="absolute inset-0 z-0">
-        <img 
-        src="/ciudad.jpg" // Usa tu imagen de ciudad aquí
-        alt="Fondo Soluciones" 
-        className="w-full h-full object-cover grayscale brightness-50" 
-        />
+        <video
+        key={isNight ? "night" : "day"} 
+        autoPlay
+        loop
+        muted
+        playsInline
+        className="object-cover w-full h-full grayscale brightness-[0.4]"
+        >
+        <source src={isNight ? "/video-lima-mañana.mp4" : "/video-lima-mañana-2.mp4"} type="video/mp4" />
+        </video>
+        <div className={`absolute inset-0 transition-colors duration-1000 ${isNight ? 'bg-black/70' : 'bg-black/50'}`}></div>
     </div>
 
-    {/* 2. CONTENIDO */}
-    <div className="relative z-10 text-center px-4 animate-fade-in-up">
-        <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 tracking-tight">
-        Nuestros Servicios
+    {/* 2. CONTENIDO CENTRAL */}
+    {/* Eliminamos el div del Reloj que estaba aquí antes */}
+    
+    <div className="relative z-10 flex flex-col items-center justify-center px-4 w-full max-w-5xl mx-auto text-center animate-fade-in-up">
+        
+        {/* Píldora Superior (La mantenemos porque ayuda al contexto) */}
+        <div className="inline-flex items-center gap-2 bg-white/10 border border-white/20 rounded-full px-6 py-2 mb-8 backdrop-blur-md">
+        <Sparkles size={14} className="text-cyan-300" />
+        <span className="text-xs text-white font-bold tracking-wide uppercase font-sans">
+            Soluciones Integrales
+        </span>
+        </div>
+
+        {/* TÍTULO */}
+        <h1 className="text-5xl md:text-7xl lg:text-8xl font-black text-white mb-10 tracking-tight leading-tight drop-shadow-2xl">
+        Nuestros <br className="md:hidden" />
+        <span className="text-transparent bg-clip-text bg-gradient-to-br from-white via-slate-200 to-slate-500">
+            Servicios
+        </span>
         </h1>
-        <p className="text-slate-200 text-lg md:text-xl max-w-2xl mx-auto mb-8 font-light">
-        Soluciones estratégicas para cada etapa de tu crecimiento digital.
+
+        {/* Subtítulo */}
+        <p className="text-slate-300 text-lg md:text-2xl max-w-3xl mx-auto mb-12 font-medium leading-relaxed">
+        Estrategias probadas para escalar tu facturación y automatizar tu negocio.
         </p>
         
-        {/* Botón */}
+        {/* BOTÓN */}
         <Link 
         href="https://wa.me/51999999999"
-        className="bg-white text-slate-900 px-8 py-3 rounded-full font-bold hover:scale-105 transition-transform inline-block shadow-lg"
+        className="
+            bg-white 
+            text-slate-900 
+            px-10 
+            py-4 
+            rounded-full 
+            font-extrabold 
+            text-lg 
+            tracking-tight
+            hover:scale-105 
+            hover:shadow-[0_0_30px_rgba(255,255,255,0.4)]
+            transition-all 
+            duration-300
+        "
         >
-        Hablemos
+        Cotizar Ahora
         </Link>
+
     </div>
     </section>
 );

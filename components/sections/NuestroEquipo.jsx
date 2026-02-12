@@ -7,7 +7,7 @@ export default function NuestroEquipo() {
 // Asegúrate de guardar las fotos en la carpeta "public" con estos nombres.
 const teamMembers = [
     { 
-    name: "Luz Mimbela", 
+    name: "Liz Montalico", 
     role: "Área de Finanzas", 
     img: "/foto-luz.jpg", // <--- Cambia esto por el nombre real de tu foto
     delay: 100 
@@ -25,7 +25,7 @@ const teamMembers = [
     delay: 300 
     },
     { 
-    name: "Nelson Siancas", 
+    name: "Nelson Juarez", 
     role: "Tecnología", 
     img: "/foto-nelson.jpg", 
     delay: 400 
