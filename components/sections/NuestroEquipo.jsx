@@ -8,25 +8,25 @@ export default function NuestroEquipo() {
 const teamMembers = [
     { 
     name: "Liz Montalico", 
-    role: "Área de Finanzas", 
+    role: "Dep. Finanzas", 
     img: "/foto-luz.jpg", // <--- Cambia esto por el nombre real de tu foto
     delay: 100 
     },
     { 
     name: "Mauricio Guerrero", 
-    role: "Área de I+D", 
+    role: "Dep. I+D", 
     img: "/foto-mauricio.jpg", 
     delay: 200 
     },
     { 
     name: "Eduardo Ortiz", 
-    role: "Innovación", 
+    role: "Dep. Innovación", 
     img: "/foto-eduardo.jpg", 
     delay: 300 
     },
     { 
     name: "Nelson Juarez", 
-    role: "Tecnología", 
+    role: "Dep. Tecnología", 
     img: "/foto-nelson.jpg", 
     delay: 400 
     },

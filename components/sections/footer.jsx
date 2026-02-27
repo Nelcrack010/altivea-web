@@ -59,7 +59,7 @@ return (
             />
             <div className="text-slate-500 text-xs leading-relaxed space-y-1">
                 <p>Agencia de Marketing Digital.</p>
-                <p>Av. Javier Prado 123, Lima.</p>
+                <p>Av. Victoria, Chiclayo.</p>
                 <p>Todos los derechos reservados.</p>
             </div>
             </div>
