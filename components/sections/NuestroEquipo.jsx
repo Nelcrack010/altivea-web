@@ -1,34 +1,37 @@
 import React from 'react';
+import Image from 'next/image';
 import { Facebook, Instagram, Linkedin, Mail } from 'lucide-react';
 import ScrollReveal from './ScrollReveal';
 
 export default function NuestroEquipo() {
-// Aquí definimos los datos y las rutas de las fotos.
-// Asegúrate de guardar las fotos en la carpeta "public" con estos nombres.
 const teamMembers = [
     { 
     name: "Liz Montalico", 
     role: "Dep. Finanzas", 
-    img: "/foto-luz.jpg", // <--- Cambia esto por el nombre real de tu foto
-    delay: 100 
+    img: "/foto-luz.jpg", 
+    delay: 100,
+    position: "object-[center_80%]" // <-- Puedes cambiar este porcentaje
     },
     { 
     name: "Mauricio Guerrero", 
     role: "Dep. I+D", 
-    img: "/foto-mauricio.jpg", 
-    delay: 200 
+    img: "/MAURICIO.jpg", 
+    delay: 200,
+    position: "object-[center_80%]" // <-- Puedes cambiar este porcentaje
     },
     { 
     name: "Eduardo Ortiz", 
     role: "Dep. Innovación", 
-    img: "/foto-eduardo.jpg", 
-    delay: 300 
+    img: "/EDUARDO.jpg", 
+    delay: 300,
+    position: "object-[center_80%]" // <-- Puedes cambiar este porcentaje
     },
     { 
     name: "Nelson Juarez", 
     role: "Dep. Tecnología", 
-    img: "/foto-nelson.jpg", 
-    delay: 400 
+    img: "/NELSON-JUAREZ.jpg", 
+    delay: 400,
+    position: "object-[center_60%]" 
     },
 ];
 
@@ -57,18 +60,23 @@ return (
         <div className="flex justify-center mb-16">
             <div className="group relative bg-white p-1 rounded-2xl shadow-xl max-w-sm w-full text-center transition-all duration-500 hover:-translate-y-2">
             
-            {/* Borde Degradado Animado */}
             <div className="absolute inset-0 rounded-2xl p-[2px] bg-gradient-to-r from-blue-600 via-cyan-400 to-blue-600 bg-[length:200%_200%] animate-gradient-xy -z-10" />
             
             <div className="bg-white rounded-xl h-full w-full p-8 flex flex-col items-center relative overflow-hidden">
                 
                 {/* FOTO CEO */}
-                <div className="w-32 h-32 mb-6 rounded-full p-1 bg-gradient-to-tr from-blue-600 to-cyan-400">
-                <img 
-                    src="/foto-luis.jpg" // <--- Pon aquí la foto de Luis
+                <div className="relative w-32 h-32 mb-6 rounded-full p-1 bg-gradient-to-tr from-blue-600 to-cyan-400">
+                <div className="relative w-full h-full rounded-full overflow-hidden border-2 border-white bg-slate-100">
+                    <Image 
+                    src="/LUIS-AGUILAR.jpg" 
                     alt="Luis Aguilar"
-                    className="w-full h-full rounded-full object-cover border-2 border-white"
-                />
+                    fill
+                    priority
+                    sizes="(max-width: 768px) 300px, 400px"
+                    quality={100}
+                    className="object-cover object-[center_80%]" 
+                    />
+                </div>
                 </div>
                 
                 <h3 className="text-2xl font-bold text-slate-900">Luis Aguilar</h3>
@@ -77,7 +85,6 @@ return (
                 </p>
                 <span className="text-slate-400 text-xs mb-6">Visionario & Estratega</span>
 
-                {/* Redes Sociales CEO */}
                 <div className="flex gap-4 justify-center">
                 <a href="#" className="p-2 rounded-full bg-slate-100 text-slate-600 hover:bg-blue-600 hover:text-white transition-all"><Linkedin size={18} /></a>
                 <a href="#" className="p-2 rounded-full bg-slate-100 text-slate-600 hover:bg-blue-600 hover:text-white transition-all"><Mail size={18} /></a>
@@ -97,18 +104,18 @@ return (
             <ScrollReveal key={index} delay={member.delay}>
             <div className="group relative bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden hover:shadow-lg transition-all duration-300 h-full">
                 
-                {/* AQUÍ ESTÁ EL TRUCO DEL ESPACIO:
-                'pt-8 px-6 pb-20' -> Mucho padding abajo (pb-20) para dejar sitio a la barra negra
-                */}
                 <div className="pt-8 px-6 pb-20 flex flex-col items-center text-center">
                 
-                {/* FOTO MIEMBRO */}
-                {/* grayscale group-hover:grayscale-0 -> Efecto de B/N a Color */}
-                <div className="mb-4 w-24 h-24 rounded-full overflow-hidden border-2 border-slate-100 group-hover:border-blue-400 transition-all duration-300">
-                    <img 
+                {/* FOTO MIEMBRO CON ENCUADRE DINÁMICO */}
+                <div className="relative mb-4 w-24 h-24 rounded-full overflow-hidden border-2 border-slate-100 group-hover:border-blue-400 transition-all duration-300 bg-slate-100">
+                    <Image 
                     src={member.img} 
                     alt={member.name}
-                    className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500 transform group-hover:scale-110"
+                    fill
+                    sizes="(max-width: 768px) 300px, 300px"
+                    quality={100}
+                    // Aquí inyectamos la propiedad 'position' que le pusimos arriba
+                    className={`object-cover ${member.position} grayscale group-hover:grayscale-0 transition-all duration-500 transform group-hover:scale-110`}
                     />
                 </div>
                 
@@ -120,7 +127,6 @@ return (
                 </p>
                 </div>
 
-                {/* BARRA "REVEAL" - Ahora tiene espacio libre abajo para aparecer sin tapar nada */}
                 <div className="absolute bottom-0 left-0 w-full bg-slate-900 text-white py-4 flex justify-center gap-6 translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-out">
                     <a href="#" className="hover:text-blue-400 transition-colors"><Linkedin size={20} /></a>
                     <a href="#" className="hover:text-blue-400 transition-colors"><Mail size={20} /></a>
