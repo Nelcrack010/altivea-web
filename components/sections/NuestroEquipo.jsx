@@ -31,7 +31,7 @@ const teamMembers = [
     role: "Dep. Tecnología", 
     img: "/NELSON-JUAREZ.jpg", 
     delay: 400,
-    position: "object-[center_60%]" 
+    position: "object-[center_60%]" // <-- Tu encuadre personalizado
     },
 ];
 
@@ -64,8 +64,8 @@ return (
             
             <div className="bg-white rounded-xl h-full w-full p-8 flex flex-col items-center relative overflow-hidden">
                 
-                {/* FOTO CEO */}
-                <div className="relative w-32 h-32 mb-6 rounded-full p-1 bg-gradient-to-tr from-blue-600 to-cyan-400">
+                {/* FOTO CEO - RESPONSIVE SIZE (más grande en PC) */}
+                <div className="relative w-32 h-32 md:w-40 md:h-40 mb-6 rounded-full p-1 bg-gradient-to-tr from-blue-600 to-cyan-400">
                 <div className="relative w-full h-full rounded-full overflow-hidden border-2 border-white bg-slate-100">
                     <Image 
                     src="/LUIS-AGUILAR.jpg" 
@@ -96,18 +96,18 @@ return (
         </div>
         </ScrollReveal>
 
-        {/* 2. EL EQUIPO (GRID) */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        {/* 2. EL EQUIPO (GRID) - GRID MEJORADO */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-12">
         
         {teamMembers.map((member, index) => (
             
             <ScrollReveal key={index} delay={member.delay}>
-            <div className="group relative bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden hover:shadow-lg transition-all duration-300 h-full">
+            <div className="group relative bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden hover:shadow-lg transition-all duration-300 h-full flex flex-col">
                 
-                <div className="pt-8 px-6 pb-20 flex flex-col items-center text-center">
+                <div className="pt-8 px-6 pb-20 flex flex-col items-center text-center flex-grow">
                 
-                {/* FOTO MIEMBRO CON ENCUADRE DINÁMICO */}
-                <div className="relative mb-4 w-24 h-24 rounded-full overflow-hidden border-2 border-slate-100 group-hover:border-blue-400 transition-all duration-300 bg-slate-100">
+                {/* FOTO MIEMBRO - RESPONSIVE SIZE & DYNAMIC POSITION */}
+                <div className="relative mb-6 w-24 h-24 md:w-32 md:h-32 rounded-full overflow-hidden border-2 border-slate-100 group-hover:border-blue-400 transition-all duration-300 bg-slate-100">
                     <Image 
                     src={member.img} 
                     alt={member.name}
