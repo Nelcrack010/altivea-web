@@ -6,32 +6,40 @@ import ScrollReveal from './ScrollReveal';
 export default function NuestroEquipo() {
 const teamMembers = [
     { 
-    name: "Liz Montalico", 
-    role: "Dep. Finanzas", 
-    img: "/foto-luz.jpg", 
-    delay: 100,
-    position: "object-[center_80%]" // <-- Puedes cambiar este porcentaje
+        name: "Liz Montalico", 
+        role: "Dep. Finanzas", 
+        img: "/foto-luz.jpg", 
+        delay: 100,
+        position: "object-[center_80%]",
+        linkedin: "https://www.linkedin.com/in/tu-perfil", // <-- Reemplazar
+        mail: "mailto:liz@altivea.com", // <-- Reemplazar con el correo
     },
     { 
-    name: "Mauricio Guerrero", 
-    role: "Dep. I+D", 
-    img: "/MAURICIO.jpg", 
-    delay: 200,
-    position: "object-[center_80%]" // <-- Puedes cambiar este porcentaje
+        name: "Mauricio Guerrero", 
+        role: "Dep. I+D", 
+        img: "/MAURICIO.jpg", 
+        delay: 200,
+        position: "object-[center_80%]",
+        linkedin: "http://www.linkedin.com/in/mauricio-guerrero-toscanelli-46a05a336",
+        mail: "https://mail.google.com/mail/?view=cm&fs=1&to=mauricioguerrerotoscanelli@gmail.com",
     },
     { 
-    name: "Eduardo Ortiz", 
-    role: "Dep. Innovación", 
-    img: "/EDUARDO.jpg", 
-    delay: 300,
-    position: "object-[center_80%]" // <-- Puedes cambiar este porcentaje
+        name: "Eduardo Ortiz", 
+        role: "Dep. Innovación", 
+        img: "/EDUARDO.jpg", 
+        delay: 300,
+        position: "object-[center_80%]",
+        linkedin: "https://www.linkedin.com/in/tu-perfil",
+        mail: "mailto:eduardo@altivea.com",
     },
     { 
-    name: "Nelson Juarez", 
-    role: "Dep. Tecnología", 
-    img: "/NELSON-JUAREZ.jpg", 
-    delay: 400,
-    position: "object-[center_60%]" // <-- Tu encuadre personalizado
+        name: "Nelson Juarez", 
+        role: "Dep. Tecnología", 
+        img: "/NELSON-JUAREZ.jpg", 
+        delay: 400,
+        position: "object-[center_60%]",
+        linkedin: "https://www.linkedin.com/in/nelson-andr%C3%A9-junior-juarez-llatas-37a6523b5/",
+        mail: "https://mail.google.com/mail/?view=cm&fs=1&to=njuarezllatas@gmail.com",
     },
 ];
 
@@ -64,7 +72,7 @@ return (
             
             <div className="bg-white rounded-xl h-full w-full p-8 flex flex-col items-center relative overflow-hidden">
                 
-                {/* FOTO CEO - RESPONSIVE SIZE (más grande en PC) */}
+                {/* FOTO CEO */}
                 <div className="relative w-32 h-32 md:w-40 md:h-40 mb-6 rounded-full p-1 bg-gradient-to-tr from-blue-600 to-cyan-400">
                 <div className="relative w-full h-full rounded-full overflow-hidden border-2 border-white bg-slate-100">
                     <Image 
@@ -86,17 +94,16 @@ return (
                 <span className="text-slate-400 text-xs mb-6">Visionario & Estratega</span>
 
                 <div className="flex gap-4 justify-center">
-                <a href="#" className="p-2 rounded-full bg-slate-100 text-slate-600 hover:bg-blue-600 hover:text-white transition-all"><Linkedin size={18} /></a>
-                <a href="#" className="p-2 rounded-full bg-slate-100 text-slate-600 hover:bg-blue-600 hover:text-white transition-all"><Mail size={18} /></a>
-                <a href="#" className="p-2 rounded-full bg-slate-100 text-slate-600 hover:bg-blue-600 hover:text-white transition-all"><Instagram size={20} /></a>
-                <a href="https://www.facebook.com/luisfrancisco.aguilardiaz.39" className="p-2 rounded-full bg-slate-100 text-slate-600 hover:bg-blue-600 hover:text-white transition-all"><Facebook size={20} /></a>
+                <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer" className="p-2 rounded-full bg-slate-100 text-slate-600 hover:bg-blue-600 hover:text-white transition-all"><Linkedin size={18} /></a>
+                <a href="mailto:luis@altivea.com" className="p-2 rounded-full bg-slate-100 text-slate-600 hover:bg-blue-600 hover:text-white transition-all"><Mail size={18} /></a>
+                <a href="https://www.facebook.com/luisfrancisco.aguilardiaz.39" target="_blank" rel="noopener noreferrer" className="p-2 rounded-full bg-slate-100 text-slate-600 hover:bg-blue-600 hover:text-white transition-all"><Facebook size={20} /></a>
                 </div>
             </div>
             </div>
         </div>
         </ScrollReveal>
 
-        {/* 2. EL EQUIPO (GRID) - GRID MEJORADO */}
+        {/* 2. EL EQUIPO (GRID) */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-12">
         
         {teamMembers.map((member, index) => (
@@ -106,7 +113,7 @@ return (
                 
                 <div className="pt-8 px-6 pb-20 flex flex-col items-center text-center flex-grow">
                 
-                {/* FOTO MIEMBRO - RESPONSIVE SIZE & DYNAMIC POSITION */}
+                {/* FOTO MIEMBRO */}
                 <div className="relative mb-6 w-24 h-24 md:w-32 md:h-32 rounded-full overflow-hidden border-2 border-slate-100 group-hover:border-blue-400 transition-all duration-300 bg-slate-100">
                     <Image 
                     src={member.img} 
@@ -114,7 +121,6 @@ return (
                     fill
                     sizes="(max-width: 768px) 300px, 300px"
                     quality={100}
-                    // Aquí inyectamos la propiedad 'position' que le pusimos arriba
                     className={`object-cover ${member.position} grayscale group-hover:grayscale-0 transition-all duration-500 transform group-hover:scale-110`}
                     />
                 </div>
@@ -127,10 +133,19 @@ return (
                 </p>
                 </div>
 
+                {/* ENLACES DINÁMICOS */}
                 <div className="absolute bottom-0 left-0 w-full bg-slate-900 text-white py-4 flex justify-center gap-6 translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-out">
-                    <a href="#" className="hover:text-blue-400 transition-colors"><Linkedin size={20} /></a>
-                    <a href="#" className="hover:text-blue-400 transition-colors"><Mail size={20} /></a>
-                    <a href="#" className="hover:text-blue-400 transition-colors"><Instagram size={20} /></a>
+                    {/* Renderizado Condicional: Solo muestra el ícono si el link existe */}
+                    {member.linkedin && (
+                        <a href={member.linkedin} target="_blank" rel="noopener noreferrer" className="hover:text-blue-400 transition-colors">
+                            <Linkedin size={20} />
+                        </a>
+                    )}
+                    {member.mail && (
+                        <a href={member.mail} target='_blank' className="hover:text-blue-400 transition-colors">
+                            <Mail size={20} />
+                        </a>
+                    )}
                 </div>
 
             </div>
