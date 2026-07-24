@@ -19,10 +19,10 @@ useEffect(() => {
     updateTime(); 
 }, []);
 
-if (!mounted) return <div className="h-screen bg-slate-900" />;
+if (!mounted) return <div className="h-screen bg-altivea-blue" />;
 
 return (
-    <section className="relative w-full h-screen flex items-center justify-center overflow-hidden bg-black">
+    <section className="relative w-full h-screen flex items-center justify-center overflow-hidden bg-altivea-blue">
     
     {/* 1. VIDEO DE FONDO */}
     <div className="absolute inset-0 z-0">
@@ -33,7 +33,7 @@ return (
         >
         <source src={isNight ? "/video-lima-mañana.mp4" : "/video-lima-mañana-2.mp4"} type="video/mp4" />
         </video>
-        <div className={`absolute inset-0 transition-colors duration-1000 ${isNight ? 'bg-black/70' : 'bg-black/50'}`}></div>
+        <div className={`absolute inset-0 transition-colors duration-1000 ${isNight ? 'bg-altivea-blue/70' : 'bg-altivea-blue/50'}`}></div>
     </div>
 
     {/* 2. CONTENIDO CENTRAL */}
@@ -43,7 +43,7 @@ return (
         
         {/* Píldora Contextual (Esta sí la dejamos) */}
         <div className="inline-flex items-center gap-2 bg-white/10 border border-white/20 rounded-full px-5 py-2 mb-8 backdrop-blur-md">
-        <TrendingUp size={16} className="text-emerald-400" />
+        <TrendingUp size={16} className="text-altivea-accent2" />
         <span className="text-xs text-white font-bold tracking-wide uppercase font-sans">
             Casos de Éxito
         </span>
@@ -52,7 +52,7 @@ return (
         {/* TÍTULO */}
         <h1 className="text-5xl md:text-7xl lg:text-8xl font-black text-white mb-8 tracking-tight leading-tight drop-shadow-2xl">
         Resultados que <br className="md:hidden" />
-        <span className="text-transparent bg-clip-text bg-gradient-to-br from-emerald-400 via-teal-200 to-cyan-500">
+        <span className="text-transparent bg-clip-text bg-gradient-to-br from-altivea-accent2 via-white to-altivea-accent">
             Hacen Ruido
         </span>
         </h1>

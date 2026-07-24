@@ -4,7 +4,7 @@ import { Mail, MapPin, Phone } from 'lucide-react';
 
 export default function Footer() {
 return (
-    <footer className="bg-black text-white w-full">
+    <footer className="bg-altivea-blue text-white w-full">
     
     {/* 1. SECCIÓN CTA - PANTALLA COMPLETA (Igual al Hero) */}
     <div className="h-screen w-full flex flex-col items-center justify-center text-center px-4">
@@ -12,7 +12,7 @@ return (
         {/* Título Gigante */}
         <h2 className="text-5xl md:text-7xl lg:text-8xl font-bold mb-8 tracking-tight">
         ¿Listo para escalar <br />
-        <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-cyan-400">
+        <span className="text-transparent bg-clip-text bg-gradient-to-r from-altivea-accent to-altivea-accent2">
             tu negocio?
         </span>
         </h2>
@@ -27,7 +27,7 @@ return (
         href="https://wa.me/51999999999"
         className="
             bg-white 
-            text-black 
+            text-altivea-blue 
             px-12 
             py-4 
             rounded-full 
@@ -44,7 +44,7 @@ return (
     </div>
 
     {/* 2. FOOTER - ENLACES (Wireframe) */}
-    <div className="border-t border-white/10 pt-16 pb-12 bg-black">
+    <div className="border-t border-white/10 pt-16 pb-12 bg-altivea-blue">
         <div className="max-w-7xl mx-auto px-6 md:px-12">
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 text-sm">

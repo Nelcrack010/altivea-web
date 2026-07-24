@@ -10,10 +10,12 @@ const config: Config = {
     extend: {
       colors: {
         altivea: {
-          blue: "#001535",      // Azul Oscuro
-          light: "#F8FAFC",     // Blanco Humo
-          accent: "#2563EB",    // Azul Eléctrico
-          text: "#334155",      // Gris Pizarra
+          blue: "#001535",       // Azul Oscuro (fondo principal de secciones oscuras)
+          blueLight: "#0C2350",  // Azul Marino medio (tarjetas y bordes sobre fondo oscuro)
+          light: "#F8FAFC",      // Blanco Humo (fondo de secciones claras)
+          accent: "#2563EB",     // Azul Eléctrico (botones, links, íconos activos)
+          accent2: "#22D3EE",    // Celeste/Cian (detalles, degradados, acentos secundarios)
+          text: "#334155",       // Gris Pizarra (texto sobre fondo claro)
         },
       },
       fontFamily: {

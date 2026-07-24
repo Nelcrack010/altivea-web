@@ -20,10 +20,10 @@ useEffect(() => {
     updateTime(); 
 }, []);
 
-if (!mounted) return <div className="h-screen bg-slate-900" />;
+if (!mounted) return <div className="h-screen bg-altivea-blue" />;
 
 return (
-    <section className="relative w-full h-screen flex items-center justify-center overflow-hidden bg-black">
+    <section className="relative w-full h-screen flex items-center justify-center overflow-hidden bg-altivea-blue">
     
     {/* 1. VIDEO DE FONDO */}
     <div className="absolute inset-0 z-0">
@@ -37,7 +37,7 @@ return (
         >
         <source src={isNight ? "/video-lima-mañana.mp4" : "/video-lima-mañana-2.mp4"} type="video/mp4" />
         </video>
-        <div className={`absolute inset-0 transition-colors duration-1000 ${isNight ? 'bg-black/70' : 'bg-black/50'}`}></div>
+        <div className={`absolute inset-0 transition-colors duration-1000 ${isNight ? 'bg-altivea-blue/70' : 'bg-altivea-blue/50'}`}></div>
     </div>
 
     {/* 2. CONTENIDO CENTRAL */}
@@ -47,7 +47,7 @@ return (
         
         {/* Píldora Superior (La mantenemos porque ayuda al contexto) */}
         <div className="inline-flex items-center gap-2 bg-white/10 border border-white/20 rounded-full px-6 py-2 mb-8 backdrop-blur-md">
-        <Sparkles size={14} className="text-cyan-300" />
+        <Sparkles size={14} className="text-white" />
         <span className="text-xs text-white font-bold tracking-wide uppercase font-sans">
             Soluciones Integrales
         </span>
@@ -56,7 +56,7 @@ return (
         {/* TÍTULO */}
         <h1 className="text-5xl md:text-7xl lg:text-8xl font-black text-white mb-10 tracking-tight leading-tight drop-shadow-2xl">
         Nuestros <br className="md:hidden" />
-        <span className="text-transparent bg-clip-text bg-gradient-to-br from-white via-slate-200 to-slate-500">
+        <span className="text-transparent bg-clip-text bg-gradient-to-br from-altivea-accent2 via-white to-altivea-accent">
             Servicios
         </span>
         </h1>
@@ -71,7 +71,7 @@ return (
         href="https://wa.me/51999999999"
         className="
             bg-white 
-            text-slate-900 
+            text-altivea-blue 
             px-10 
             py-4 
             rounded-full 

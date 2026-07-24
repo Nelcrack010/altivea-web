@@ -122,7 +122,7 @@ else if (paquetesActivos.length === 2) gridClasses = "lg:grid-cols-2 max-w-4xl m
 else if (paquetesActivos.length === 4) gridClasses = "lg:grid-cols-4 max-w-7xl mx-auto";
 
 return (
-    <section className="py-24 bg-slate-100 text-slate-900 min-h-screen">
+    <section className="py-24 bg-slate-100 text-altivea-blue min-h-screen">
     <div className="w-full px-6">
         
         <div className="text-center mb-10 max-w-3xl mx-auto">
@@ -150,9 +150,9 @@ return (
             className={`px-7 py-3.5 rounded-xl font-semibold tracking-wide transition-all duration-300 border-2 ${
                 departamentoActivo === key
                 // Activo: Fondo oscuro corporativo (slate-900), sombra sutil y ligero salto hacia arriba
-                ? 'border-slate-900 bg-slate-900 text-white shadow-xl shadow-slate-900/20 -translate-y-1'
+                ? 'border-altivea-blue bg-altivea-blue text-white shadow-xl shadow-altivea-blue/20 -translate-y-1'
                 // Inactivo: Transparente con borde gris sutil, al pasar el mouse se oscurece el borde
-                : 'border-slate-200 bg-transparent text-slate-500 hover:border-slate-900 hover:text-slate-900 hover:bg-slate-50'
+                : 'border-slate-200 bg-transparent text-slate-500 hover:border-altivea-blue hover:text-altivea-blue hover:bg-slate-50'
             }`}
             >
             {datosPaquetes[key].nombre}
@@ -170,10 +170,10 @@ return (
                 // Estilo base: Más pequeño (rounded-lg) para diferenciarlo del menú principal
                 className={`px-5 py-2 rounded-lg text-sm font-medium transition-all duration-300 border ${
                 subcategoriaActiva === subKey
-                    // Activo: Un gris oscuro para que no compita con el botón negro principal
-                    ? 'border-slate-700 bg-slate-700 text-white shadow-md'
+                    // Activo: Azul eléctrico para diferenciarlo del navy del menú principal
+                    ? 'border-altivea-accent bg-altivea-accent text-white shadow-md'
                     // Inactivo: Blanco limpio con borde suave
-                    : 'border-slate-200 bg-white text-slate-500 hover:border-slate-400 hover:text-slate-900'
+                    : 'border-slate-200 bg-white text-slate-500 hover:border-slate-400 hover:text-altivea-blue'
                 }`}
             >
                 {deptActual.subcategorias[subKey].nombre}
@@ -189,12 +189,12 @@ return (
         {paquetesActivos.map((pkg, index) => (
             <div 
             key={`${departamentoActivo}-${subcategoriaActiva}-${index}`}
-            className="bg-black text-white p-8 rounded-2xl shadow-xl hover:-translate-y-2 transition-transform duration-300 flex flex-col border border-slate-800 animate-fade-in-up"
+            className="bg-altivea-blue text-white p-8 rounded-2xl shadow-xl hover:-translate-y-2 transition-transform duration-300 flex flex-col border border-altivea-blueLight animate-fade-in-up"
             >
             <h3 className="text-xl font-bold mb-2 text-white">{pkg.title}</h3>
             
             <div className="mb-6">
-                <span className="text-2xl font-black text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-300">
+                <span className="text-2xl font-black text-transparent bg-clip-text bg-gradient-to-r from-altivea-accent2 to-white">
                 {pkg.price}
                 </span>
             </div>
@@ -202,13 +202,13 @@ return (
             <ul className="space-y-4 mb-8 flex-1">
                 {pkg.features.map((feature, idx) => (
                 <li key={idx} className="flex items-start gap-3 text-slate-300 text-sm leading-relaxed">
-                    <Check size={18} className="text-blue-500 min-w-[18px] mt-0.5 flex-shrink-0" />
+                    <Check size={18} className="text-altivea-accent min-w-[18px] mt-0.5 flex-shrink-0" />
                     <span>{feature}</span>
                 </li>
                 ))}
             </ul>
 
-            <button className="w-full py-3 rounded-xl font-bold bg-white text-black hover:bg-blue-600 hover:text-white transition-colors duration-300 mt-auto">
+            <button className="w-full py-3 rounded-xl font-bold bg-white text-altivea-blue hover:bg-altivea-accent hover:text-white transition-colors duration-300 mt-auto">
                 Cotizar ahora
             </button>
             </div>

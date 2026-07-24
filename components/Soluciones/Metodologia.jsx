@@ -10,7 +10,7 @@ const steps = [
 ];
 
 return (
-    <section className="py-24 bg-white text-slate-900">
+    <section className="py-24 bg-white text-altivea-blue">
     <div className="max-w-6xl mx-auto px-6">
         
         <div className="text-center mb-16">
@@ -28,7 +28,7 @@ return (
             <div key={index} className="flex-1 flex flex-col items-center text-center group w-full">
             
             {/* CIRCULO ICONO */}
-            <div className="w-24 h-24 bg-white border-2 border-slate-900 rounded-full flex items-center justify-center mb-6 group-hover:bg-slate-900 group-hover:text-white transition-all duration-300 shadow-sm z-10">
+            <div className="w-24 h-24 bg-white border-2 border-altivea-blue rounded-full flex items-center justify-center mb-6 group-hover:bg-altivea-blue group-hover:text-white transition-all duration-300 shadow-sm z-10">
                 {step.icon}
             </div>
             

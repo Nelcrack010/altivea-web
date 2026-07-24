@@ -44,10 +44,10 @@ return <span ref={countRef}>{count}</span>;
 // --- COMPONENTE PRINCIPAL ---
 export default function PorQueElegirnos() {
 return (
-    <section className="py-24 bg-slate-50 text-slate-900 overflow-hidden relative">
+    <section className="py-24 bg-slate-50 text-altivea-blue overflow-hidden relative">
     
     {/* Fondo decorativo muy sutil (Opcional, un destello azul atrás) */}
-    <div className="absolute right-0 top-1/2 -translate-y-1/2 w-96 h-96 bg-blue-400/5 blur-[100px] rounded-full -z-0" />
+    <div className="absolute right-0 top-1/2 -translate-y-1/2 w-96 h-96 bg-altivea-accent2/5 blur-[100px] rounded-full -z-0" />
 
     <div className="max-w-6xl mx-auto px-6 relative z-10">
         
@@ -69,32 +69,32 @@ return (
             <ScrollReveal delay={100}>
             <div className="flex flex-col items-center text-center p-4 group hover:-translate-y-1 transition-transform duration-300">
                 {/* CAMBIO: Icono Azul Eléctrico */}
-                <Rocket size={48} strokeWidth={1.5} className="mb-4 text-blue-600 group-hover:scale-110 transition-transform duration-300" />
-                <h3 className="font-bold text-lg group-hover:text-blue-700 transition-colors">Enfoque en Resultados</h3>
+                <Rocket size={48} strokeWidth={1.5} className="mb-4 text-altivea-accent group-hover:scale-110 transition-transform duration-300" />
+                <h3 className="font-bold text-lg group-hover:text-altivea-accent transition-colors">Enfoque en Resultados</h3>
             </div>
             </ScrollReveal>
 
             {/* Item 2 */}
             <ScrollReveal delay={200}>
             <div className="flex flex-col items-center text-center p-4 group hover:-translate-y-1 transition-transform duration-300">
-                <Lightbulb size={48} strokeWidth={1.5} className="mb-4 text-blue-600 group-hover:scale-110 transition-transform duration-300" />
-                <h3 className="font-bold text-lg group-hover:text-blue-700 transition-colors">Estrategias Únicas</h3>
+                <Lightbulb size={48} strokeWidth={1.5} className="mb-4 text-altivea-accent group-hover:scale-110 transition-transform duration-300" />
+                <h3 className="font-bold text-lg group-hover:text-altivea-accent transition-colors">Estrategias Únicas</h3>
             </div>
             </ScrollReveal>
 
             {/* Item 3 */}
             <ScrollReveal delay={300}>
             <div className="flex flex-col items-center text-center p-4 group hover:-translate-y-1 transition-transform duration-300">
-                <Zap size={48} strokeWidth={1.5} className="mb-4 text-blue-600 group-hover:scale-110 transition-transform duration-300" />
-                <h3 className="font-bold text-lg group-hover:text-blue-700 transition-colors">Entregas Rápidas</h3>
+                <Zap size={48} strokeWidth={1.5} className="mb-4 text-altivea-accent group-hover:scale-110 transition-transform duration-300" />
+                <h3 className="font-bold text-lg group-hover:text-altivea-accent transition-colors">Entregas Rápidas</h3>
             </div>
             </ScrollReveal>
 
             {/* Item 4 */}
             <ScrollReveal delay={400}>
             <div className="flex flex-col items-center text-center p-4 group hover:-translate-y-1 transition-transform duration-300">
-                <Users size={48} strokeWidth={1.5} className="mb-4 text-blue-600 group-hover:scale-110 transition-transform duration-300" />
-                <h3 className="font-bold text-lg group-hover:text-blue-700 transition-colors">Acompañamiento</h3>
+                <Users size={48} strokeWidth={1.5} className="mb-4 text-altivea-accent group-hover:scale-110 transition-transform duration-300" />
+                <h3 className="font-bold text-lg group-hover:text-altivea-accent transition-colors">Acompañamiento</h3>
             </div>
             </ScrollReveal>
         </div>
@@ -104,14 +104,14 @@ return (
             <div className="bg-white p-10 rounded-3xl border border-slate-100 shadow-[0_10px_40px_-10px_rgba(37,99,235,0.15)] relative overflow-hidden">
             
             {/* Pequeña línea superior decorativa */}
-            <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-blue-600 to-cyan-400" />
+            <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-altivea-accent to-altivea-accent2" />
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-y-10 gap-x-6">
                 
                 {/* Stat 1 */}
                 <div>
                 {/* CAMBIO: Texto con degradado (Gradient Text) */}
-                <span className="flex items-baseline text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-cyan-400 mb-2">
+                <span className="flex items-baseline text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-altivea-accent to-altivea-accent2 mb-2">
                     +<AnimatedNumber end={50} />
                 </span>
                 <span className="text-slate-500 text-xs font-bold uppercase tracking-widest">
@@ -121,7 +121,7 @@ return (
 
                 {/* Stat 2 */}
                 <div>
-                <span className="flex items-baseline text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-cyan-400 mb-2">
+                <span className="flex items-baseline text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-altivea-accent to-altivea-accent2 mb-2">
                     +<AnimatedNumber end={5} duration={1000} />
                 </span>
                 <span className="text-slate-500 text-xs font-bold uppercase tracking-widest">
@@ -131,7 +131,7 @@ return (
 
                 {/* Stat 3 */}
                 <div>
-                <span className="flex items-baseline text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-cyan-400 mb-2">
+                <span className="flex items-baseline text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-altivea-accent to-altivea-accent2 mb-2">
                     <AnimatedNumber end={98} />%
                 </span>
                 <span className="text-slate-500 text-xs font-bold uppercase tracking-widest">
@@ -141,7 +141,7 @@ return (
 
                 {/* Stat 4 */}
                 <div>
-                <span className="block text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-cyan-400 mb-2">
+                <span className="block text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-altivea-accent to-altivea-accent2 mb-2">
                     24/7
                 </span>
                 <span className="text-slate-500 text-xs font-bold uppercase tracking-widest">

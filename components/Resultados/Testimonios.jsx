@@ -21,17 +21,17 @@ const reviews = [
 ];
 
 return (
-    <section className="py-24 bg-slate-50 text-slate-900">
+    <section className="py-24 bg-slate-50 text-altivea-blue">
     <div className="max-w-6xl mx-auto px-6">
         <h2 className="text-3xl font-bold text-center mb-16">Lo que dicen nuestros socios</h2>
         
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
         {reviews.map((rev, index) => (
             <div key={index} className="bg-white p-8 rounded-xl shadow-sm border border-slate-100 relative">
-            <Quote className="text-blue-100 absolute top-4 right-4" size={60} />
+            <Quote className="text-altivea-accent/15 absolute top-4 right-4" size={60} />
             <p className="text-slate-600 italic mb-6 relative z-10">"{rev.quote}"</p>
             <div>
-                <h4 className="font-bold text-slate-900">{rev.author}</h4>
+                <h4 className="font-bold text-altivea-blue">{rev.author}</h4>
                 <span className="text-xs text-slate-400 uppercase tracking-wide">{rev.role}</span>
             </div>
             </div>

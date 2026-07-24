@@ -16,10 +16,10 @@ useEffect(() => {
     updateTime(); 
 }, []);
 
-if (!mounted) return <div className="h-screen bg-slate-900" />;
+if (!mounted) return <div className="h-screen bg-altivea-blue" />;
 
 return (
-    <section className="relative w-full h-screen flex items-center justify-center overflow-hidden bg-black">
+    <section className="relative w-full h-screen flex items-center justify-center overflow-hidden bg-altivea-blue">
     
     {/* 1. VIDEO DE FONDO */}
     <div className="absolute inset-0 z-0">
@@ -31,7 +31,7 @@ return (
         <source src={isNight ? "/video-lima-mañana.mp4" : "/video-lima-mañana-2.mp4"} type="video/mp4" />
         </video>
         {/* Degradado para asegurar legibilidad del texto */}
-        <div className={`absolute inset-0 transition-colors duration-1000 ${isNight ? 'bg-black/70' : 'bg-black/50'}`}></div>
+        <div className={`absolute inset-0 transition-colors duration-1000 ${isNight ? 'bg-altivea-blue/70' : 'bg-altivea-blue/50'}`}></div>
     </div>
 
     {/* 2. CONTENIDO CENTRAL (Título) */}
@@ -41,7 +41,7 @@ return (
         
         <h1 className="text-5xl md:text-7xl lg:text-8xl font-black text-white mb-8 tracking-tight leading-tight drop-shadow-2xl">
         Más que una <br className="md:hidden" /> Agencia, <br />
-        <span className="text-transparent bg-clip-text bg-gradient-to-br from-white via-slate-200 to-slate-500">
+        <span className="text-transparent bg-clip-text bg-gradient-to-br from-altivea-accent2 via-white to-altivea-accent">
             Tu Socio Estratégico
         </span>
         </h1>

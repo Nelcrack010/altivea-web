@@ -7,7 +7,7 @@ import Navbar from "@/components/layout/Navbar";
 
 // importando las fuentes
 const inter = Inter({ subsets: ["latin"], variable: '--font-inter'});
-const monserrat = Montserrat({ subsets: ["latin"], variable: '--font-monyserrat' });
+const monserrat = Montserrat({ subsets: ["latin"], variable: '--font-montserrat' });
 
 export const metadata: Metadata = {
   title: "Altivea Group | Marketing y Tecnología",

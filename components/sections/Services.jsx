@@ -36,16 +36,16 @@ const services = [
 
 export default function Services() {
 return (
-    <section className="py-24 bg-white text-slate-900" id="servicios">
+    <section className="py-24 bg-white text-altivea-blue" id="servicios">
     <div className="max-w-7xl mx-auto px-6 md:px-12">
         
         {/* ENCABEZADO DE LA SECCIÓN */}
         <div className="text-center mb-16 max-w-3xl mx-auto">
-        <span className="text-blue-600 font-bold tracking-widest uppercase text-sm mb-2 block">
+        <span className="text-altivea-accent font-bold tracking-widest uppercase text-sm mb-2 block">
             Nuestras Soluciones
         </span>
-        <h2 className="text-4xl md:text-5xl font-bold mb-6 text-slate-900">
-            Todo lo que tu empresa necesita para <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-cyan-500">escalar</span>
+        <h2 className="text-4xl md:text-5xl font-bold mb-6 text-altivea-blue">
+            Todo lo que tu empresa necesita para <span className="text-transparent bg-clip-text bg-gradient-to-r from-altivea-accent to-altivea-accent2">escalar</span>
         </h2>
         <p className="text-lg text-slate-600">
             Combinamos tecnología de punta con estrategias de marketing probadas para dar resultados tangibles.
@@ -60,12 +60,12 @@ return (
             className="group p-8 rounded-2xl border border-slate-100 bg-slate-50 hover:bg-white hover:shadow-xl hover:-translate-y-1 transition-all duration-300 cursor-default"
             >
             {/* ICONO */}
-            <div className="w-14 h-14 bg-white rounded-lg flex items-center justify-center text-slate-900 shadow-sm mb-6 group-hover:bg-blue-600 group-hover:text-white transition-colors duration-300">
+            <div className="w-14 h-14 bg-white rounded-lg flex items-center justify-center text-altivea-blue shadow-sm mb-6 group-hover:bg-altivea-accent group-hover:text-white transition-colors duration-300">
                 {service.icon}
             </div>
             
             {/* TEXTO */}
-            <h3 className="text-xl font-bold mb-3 text-slate-900 group-hover:text-blue-600 transition-colors">
+            <h3 className="text-xl font-bold mb-3 text-altivea-blue group-hover:text-altivea-accent transition-colors">
                 {service.title}
             </h3>
             <p className="text-slate-600 leading-relaxed">

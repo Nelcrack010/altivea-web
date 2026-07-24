@@ -10,7 +10,7 @@ const valores = [
 ];
 
 return (
-    <section className="py-24 bg-slate-900 text-white">
+    <section className="py-24 bg-altivea-blue text-white">
     <div className="max-w-6xl mx-auto px-6">
         
         <div className="text-center mb-16">
@@ -20,8 +20,8 @@ return (
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
         {valores.map((valor, index) => (
-            <div key={index} className="bg-slate-800/50 p-8 rounded-2xl border border-slate-700 hover:border-blue-500 transition-colors duration-300 group">
-            <div className="mb-6 p-4 bg-slate-900 rounded-full w-fit text-blue-400 group-hover:text-white group-hover:bg-blue-600 transition-all duration-300">
+            <div key={index} className="bg-altivea-blueLight/50 p-8 rounded-2xl border border-altivea-blueLight hover:border-altivea-accent transition-colors duration-300 group">
+            <div className="mb-6 p-4 bg-altivea-blue rounded-full w-fit text-altivea-accent2 group-hover:text-white group-hover:bg-altivea-accent transition-all duration-300">
                 {valor.icon}
             </div>
             <h3 className="text-xl font-bold mb-3">{valor.title}</h3>

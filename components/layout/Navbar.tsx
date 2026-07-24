@@ -14,13 +14,13 @@ return (
     className="group flex items-center gap-4 p-4 rounded-2xl transition-all duration-300 hover:bg-white/5 active:scale-95 border border-transparent hover:border-white/10"
     >
     {/* Icono con fondo circular */}
-    <div className="p-3 rounded-full bg-white/5 text-slate-300 group-hover:bg-blue-600 group-hover:text-white transition-all duration-300 shadow-lg group-hover:shadow-blue-500/30">
+    <div className="p-3 rounded-full bg-white/5 text-slate-300 group-hover:bg-altivea-accent group-hover:text-white transition-all duration-300 shadow-lg group-hover:shadow-altivea-accent/30">
         {icon}
     </div>
     
     {/* Textos */}
     <div className="flex-1">
-        <h4 className="text-lg font-bold text-white group-hover:text-blue-400 transition-colors">
+        <h4 className="text-lg font-bold text-white group-hover:text-altivea-accent2 transition-colors">
         {title}
         </h4>
         <p className="text-xs text-slate-400 group-hover:text-slate-300">
@@ -29,7 +29,7 @@ return (
     </div>
 
     {/* Flechita decorativa */}
-    <ArrowRight size={16} className="text-slate-600 group-hover:text-blue-400 transform group-hover:translate-x-1 transition-all" />
+    <ArrowRight size={16} className="text-slate-600 group-hover:text-altivea-accent2 transform group-hover:translate-x-1 transition-all" />
     </Link>
 );
 };
@@ -41,7 +41,7 @@ return (
     <span className="relative z-10 text-white/90 font-medium text-sm md:text-base group-hover:text-white transition-colors duration-300">
         {children}
     </span>
-    <span className="absolute left-0 bottom-0 w-0 h-[2px] bg-blue-400 transition-all duration-300 ease-out group-hover:w-full"></span>
+    <span className="absolute left-0 bottom-0 w-0 h-[2px] bg-altivea-accent2 transition-all duration-300 ease-out group-hover:w-full"></span>
     </Link>
 );
 };
@@ -71,7 +71,7 @@ return (
         fixed top-0 z-50 w-full 
         transition-all duration-500 ease-in-out
         ${scrolled || isOpen // Si está scrolleado O el menú abierto -> Fondo sólido
-        ? 'bg-black/90 backdrop-blur-md py-4 shadow-2xl border-b border-white/5' 
+        ? 'bg-altivea-blue/90 backdrop-blur-md py-4 shadow-2xl border-b border-white/5' 
         : 'bg-transparent py-6 border-transparent' 
         }
     `}
@@ -110,8 +110,8 @@ return (
                 className={`
                 px-6 py-2.5 rounded-full font-bold text-sm transition-all duration-300
                 ${scrolled 
-                    ? 'bg-white text-slate-900 hover:bg-blue-600 hover:text-white' 
-                    : 'bg-white/10 text-white backdrop-blur-sm border border-white/20 hover:bg-white hover:text-slate-900' 
+                    ? 'bg-white text-altivea-blue hover:bg-altivea-accent hover:text-white' 
+                    : 'bg-white/10 text-white backdrop-blur-sm border border-white/20 hover:bg-white hover:text-altivea-blue' 
                 }
                 `}
             >
@@ -125,7 +125,7 @@ return (
             onClick={() => setIsOpen(!isOpen)} 
             className="text-white p-2 focus:outline-none"
             >
-                {isOpen ? <X size={28} className="text-blue-400" /> : <Menu size={28} />}
+                {isOpen ? <X size={28} className="text-altivea-accent2" /> : <Menu size={28} />}
             </button>
         </div>
     </div>
@@ -133,7 +133,7 @@ return (
     {/* --- MENÚ MÓVIL DESPLEGABLE --- */}
     {/* Ocupa toda la pantalla debajo de la barra */}
     <div className={`
-        md:hidden fixed inset-0 top-[72px] z-40 bg-black/95 backdrop-blur-xl 
+        md:hidden fixed inset-0 top-[72px] z-40 bg-altivea-blue/95 backdrop-blur-xl 
         transition-all duration-500 ease-in-out
         ${isOpen ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-full pointer-events-none'}
     `}>
@@ -171,7 +171,7 @@ return (
             {/* 2. BOTÓN PRINCIPAL */}
             <Link 
                 href="https://wa.me/51999999999"
-                className="w-full bg-blue-600 text-white py-4 rounded-xl font-bold text-lg text-center shadow-lg shadow-blue-900/50 hover:bg-blue-500 active:scale-95 transition-all"
+                className="w-full bg-altivea-accent text-white py-4 rounded-xl font-bold text-lg text-center shadow-lg shadow-altivea-blue/50 hover:bg-altivea-accent active:scale-95 transition-all"
                 onClick={() => setIsOpen(false)}
             >
                 ¡Hablemos Ahora!
@@ -181,7 +181,7 @@ return (
             <div className="mt-auto flex flex-col gap-4 pt-8 text-center md:text-left">
             <div className="flex items-center justify-center gap-2 text-slate-400 text-sm">
                 <Mail size={16} />
-                <span>contacto@altiveagroup.com</span>
+                <span>hola@altiveagroup.com</span>
             </div>
             <div className="flex items-center justify-center gap-2 text-slate-400 text-sm">
                 <MapPin size={16} />

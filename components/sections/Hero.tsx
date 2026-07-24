@@ -32,10 +32,10 @@ useEffect(() => {
 }, []);
 
 // Evitar parpadeos de hidratación
-if (!mounted) return <div className="h-screen bg-slate-900" />;
+if (!mounted) return <div className="h-screen bg-altivea-blue" />;
 
 return (
-    <section className="relative w-full h-screen flex items-center justify-center overflow-hidden bg-black">
+    <section className="relative w-full h-screen flex items-center justify-center overflow-hidden bg-altivea-blue">
     
     {/* 1. VIDEO DE FONDO DINÁMICO */}
     <div className="absolute inset-0 z-0">
@@ -51,7 +51,7 @@ return (
         </video>
         
         {/* Capa oscura (más oscura de noche) */}
-        <div className={`absolute inset-0 transition-colors duration-1000 ${isNight ? 'bg-black/60' : 'bg-black/40'}`}></div>
+        <div className={`absolute inset-0 transition-colors duration-1000 ${isNight ? 'bg-altivea-blue/60' : 'bg-altivea-blue/40'}`}></div>
     </div>
 
     {/* 2. CONTENIDO PRINCIPAL */}
@@ -61,7 +61,7 @@ return (
         
         {/* Etiqueta dinámica (Sol/Luna) - Esta la dejamos porque aporta valor */}
         <div className="inline-flex items-center gap-2 bg-white/10 border border-white/20 rounded-full px-4 py-1 mb-8 backdrop-blur-sm">
-            {isNight ? <Moon size={16} className="text-blue-300"/> : <Sun size={16} className="text-yellow-300"/>}
+            {isNight ? <Moon size={16} className="text-altivea-accent2"/> : <Sun size={16} className="text-yellow-300"/>}
             <span className="text-sm text-white font-medium">
                 {isNight ? "Tecnología que nunca duerme" : "Impulsando negocios"}
             </span>
@@ -81,7 +81,7 @@ return (
             href="https://wa.me/51999999999"
             className="
                 bg-white 
-                text-slate-900 
+                text-altivea-blue 
                 px-12 
                 py-3 
                 rounded-full 
