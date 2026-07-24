@@ -70,7 +70,7 @@ const casos = [
         { valor: "+130%", label: "Interacciones" }
     ],
     colorTema: "blue",
-    imagenRuta: "/concrafer.jpeg" 
+    imagenRuta: "/Concrafer.jpeg" 
     }
 ];
 
