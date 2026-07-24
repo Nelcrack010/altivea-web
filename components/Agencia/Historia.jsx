@@ -16,7 +16,7 @@ return (
             <h2 className="text-3xl font-bold mb-6">Sobre Nosotros</h2>
             <p className="text-slate-600 leading-relaxed text-justify">
             Altivea Group nació en Chiclayo con un objetivo claro: acercar a las empresas peruanas
-            —desde emprendimientos hasta PYMES en crecimiento— la misma tecnología y estrategia
+            — desde emprendimientos hasta PYMES en crecimiento — la misma tecnología y estrategia
             digital que antes solo tenían las grandes marcas. Somos un equipo multidisciplinario
             que combina marketing, desarrollo de software y automatización con inteligencia
             artificial para convertir cada proyecto en un motor de ventas real.
@@ -30,10 +30,10 @@ return (
         {/* 2. LA CAJA DE LA IMAGEN ACTUALIZADA */}
         <div className="relative w-full h-[400px] rounded-lg shadow-lg overflow-hidden group">
             <Image 
-                src="/FOTO-EQUIPO.jpg"
+                src="/Altivea-logo.png"
                 alt="Equipo de Altivea Group"
                 fill
-                sizes="(max-width: 768px) 100vw, 50vw"
+                sizes="(max-width: 700px) 100vw, 50vw"
                 quality={90}
                 className="object-cover transition-transform duration-700 group-hover:scale-105"
             />
@@ -51,16 +51,16 @@ return (
             <div className="bg-altivea-light p-10 rounded-lg text-center h-full flex flex-col items-center justify-center transition-all hover:shadow-md border-t-4 border-altivea-accent">
             <Lightbulb size={36} className="text-altivea-accent mb-4" strokeWidth={1.5} />
             <h3 className="text-xl font-bold mb-4">Misión</h3>
-            <p className="text-slate-600 text-sm">
-                Diseñar e implementar soluciones tecnológicas que conecten a las marcas con su público, integrando creatividad, data e inteligencia artificial. Buscamos que cada proyecto sea rentable y escalable.
+            <p className="text-slate-600 text-sm text-justify">
+                Diseñar e implementar soluciones estratégicas en consultoría y marketing para PYMES, integrando análisis de datos, inteligencia artificial y metodologías personalizadas, que fortalezcan la toma de decisiones, optimicen la gestión comercial y generen resultados medibles y sostenibles, a través de un acompañamiento continuo desde el diagnóstico hasta la ejecución.
             </p>
             </div>
             {/* Tarjeta Visión */}
             <div className="bg-altivea-light p-10 rounded-lg text-center h-full flex flex-col items-center justify-center transition-all hover:shadow-md border-t-4 border-altivea-accent2">
             <Presentation size={36} className="text-altivea-accent2 mb-4" strokeWidth={1.5} />
             <h3 className="text-xl font-bold mb-4">Visión</h3>
-            <p className="text-slate-600 text-sm">
-                Ser la consultora de agencias líder a nivel nacional en transformación digital para el 2030, reconocidos por un enfoque estratégico y resultados medibles que transforman el ecosistema empresarial peruano.
+            <p className="text-slate-600 text-sm text-justify">
+                Ser la consultora y agencia líder a nivel nacional en gestión comercial, marketing y ventas para PYMES, reconocida por su enfoque estratégico basado en evidencia, el uso de inteligencia artificial y la capacidad de transformar información compleja en decisiones claras que impulsen el crecimiento empresarial sostenible.
             </p>
             </div>
         </div>

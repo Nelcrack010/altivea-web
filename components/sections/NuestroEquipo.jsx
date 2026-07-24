@@ -96,7 +96,7 @@ return (
                 <span className="text-slate-400 text-xs mb-6">Visionario & Estratega</span>
 
                 <div className="flex gap-4 justify-center">
-                <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer" className="p-2 rounded-full bg-slate-100 text-slate-600 hover:bg-altivea-accent hover:text-white transition-all"><Linkedin size={18} /></a>
+                {/* <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer" className="p-2 rounded-full bg-slate-100 text-slate-600 hover:bg-altivea-accent hover:text-white transition-all"><Linkedin size={18} /></a> */}
                 <a href="mailto:luis@altiveagroup.com" className="p-2 rounded-full bg-slate-100 text-slate-600 hover:bg-altivea-accent hover:text-white transition-all"><Mail size={18} /></a>
                 <a href="https://www.facebook.com/luisfrancisco.aguilardiaz.39" target="_blank" rel="noopener noreferrer" className="p-2 rounded-full bg-slate-100 text-slate-600 hover:bg-altivea-accent hover:text-white transition-all"><Facebook size={20} /></a>
                 </div>
@@ -144,11 +144,11 @@ return (
                 {/* ENLACES DINÁMICOS */}
                 <div className="absolute bottom-0 left-0 w-full bg-altivea-blue text-white py-4 flex justify-center gap-6 translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-out">
                     {/* Renderizado Condicional: Solo muestra el ícono si el link existe */}
-                    {member.linkedin && (
+                    {/* {member.linkedin && (
                         <a href={member.linkedin} target="_blank" rel="noopener noreferrer" className="hover:text-altivea-accent2 transition-colors">
                             <Linkedin size={20} />
                         </a>
-                    )}
+                    )} */}
                     {member.mail && (
                         <a href={member.mail} target='_blank' className="hover:text-altivea-accent2 transition-colors">
                             <Mail size={20} />

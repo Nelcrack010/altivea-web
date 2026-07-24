@@ -1,87 +1,158 @@
 'use client'
 import React from 'react';
-import { ArrowUpRight, Building2, ShoppingBag, MessageCircle, Rocket } from 'lucide-react';
+import { ArrowUpRight } from 'lucide-react';
+import Image from 'next/image';
+
+// Componente interno para el Gráfico Lineal (Hecho con SVG puro)
+const LinearGrowthChart = ({ colorStr }) => (
+<div className="relative w-full h-24 mt-6">
+    <svg viewBox="0 0 100 40" className="w-full h-full overflow-visible" preserveAspectRatio="none">
+    {/* Área con gradiente debajo de la línea */}
+    <path 
+        d="M0,35 C20,32 40,25 60,15 S80,5 100,0 L100,40 L0,40 Z" 
+        fill={`url(#gradient-${colorStr})`} 
+        opacity="0.2"
+    />
+    {/* Línea principal de crecimiento */}
+    <path 
+        d="M0,35 C20,32 40,25 60,15 S80,5 100,0" 
+        className={colorStr === 'blue' ? 'stroke-blue-500' : 'stroke-emerald-400'}
+        fill="none" 
+        strokeWidth="2.5" 
+        strokeLinecap="round"
+        style={{ filter: `drop-shadow(0 4px 6px ${colorStr === 'blue' ? 'rgba(59,130,246,0.5)' : 'rgba(52,211,153,0.5)'})` }}
+    />
+    {/* Punto de inicio (Antes) */}
+    <circle cx="0" cy="35" r="2" className={colorStr === 'blue' ? 'fill-blue-400' : 'fill-emerald-400'} />
+    {/* Punto final (Después) */}
+    <circle cx="100" cy="0" r="3" className="fill-white" stroke={colorStr === 'blue' ? '#3b82f6' : '#34d399'} strokeWidth="1.5" />
+    
+    {/* Definición del gradiente */}
+    <defs>
+        <linearGradient id={`gradient-${colorStr}`} x1="0%" y1="0%" x2="0%" y2="100%">
+        <stop offset="0%" stopColor={colorStr === 'blue' ? '#3b82f6' : '#34d399'} stopOpacity="1" />
+        <stop offset="100%" stopColor={colorStr === 'blue' ? '#3b82f6' : '#34d399'} stopOpacity="0" />
+        </linearGradient>
+    </defs>
+    </svg>
+    <div className="flex justify-between text-xs font-medium text-slate-400 mt-3 uppercase tracking-wider">
+    <span>Antes</span>
+    <span className={colorStr === 'blue' ? 'text-blue-400' : 'text-emerald-400'}>Crecimiento Actual</span>
+    </div>
+</div>
+);
 
 export default function CasosExito() {
 const casos = [
     {
-    cliente: "Inmobiliaria Horizon",
-    servicio: "Lead Generation & Ads",
-    resultado: "+450% ROI",
-    desc: "Optimización de campañas en Meta Ads para venta de departamentos de lujo.",
-    icon: <Building2 size={120} strokeWidth={1} />
+    cliente: "Casa Hacienda Las Palmeras",
+    servicio: "Marketing & Gestión Comercial",
+    tiempo: "En 3 meses",
+    resultadoPrincipal: "+256%",
+    labelResultado: "Crecimiento en Ventas",
+    desc: "Incremento directo en ventas de S/ 122 mil a S/ 435 mil mensuales, superando las 140,000 visualizaciones de forma totalmente orgánica.",
+    metricasSecundarias: [
+        { valor: "+200%", label: "Interacciones" },
+        { valor: "+257%", label: "Alcance Prom." }
+    ],
+    colorTema: "emerald",
+    imagenRuta: "/PALMERAS-HACIENDA.png" 
     },
     {
-    cliente: "E-commerce Moda",
-    servicio: "Desarrollo Shopify + SEO",
-    resultado: "3X Ventas",
-    desc: "Rediseño total de la experiencia de usuario y estrategia de posicionamiento.",
-    icon: <ShoppingBag size={120} strokeWidth={1} />
-    },
-    {
-    cliente: "Clínica Dental",
-    servicio: "Automatización WhatsApp",
-    resultado: "-40% Tasa de Fuga",
-    desc: "Implementación de bots para agendamiento y confirmación de citas.",
-    icon: <MessageCircle size={120} strokeWidth={1} />
-    },
-    {
-    cliente: "StartUp Tech",
-    servicio: "Branding & Web",
-    resultado: "Ronda A",
-    desc: "Identidad visual completa para levantamiento de capital exitoso.",
-    icon: <Rocket size={120} strokeWidth={1} />
+    cliente: "Concreafer",
+    servicio: "Redes & Posicionamiento",
+    tiempo: "En 2 meses",
+    resultadoPrincipal: "9x",
+    labelResultado: "Alcance Promedio",
+    desc: "Multiplicamos el alcance visual de la marca por 9, pasando de un promedio de 290 a más de 3,100 vistas mediante reestructuración digital.",
+    metricasSecundarias: [
+        { valor: "+345%", label: "Vis. Mínima" },
+        { valor: "+130%", label: "Interacciones" }
+    ],
+    colorTema: "blue",
+    imagenRuta: "/concrafer.jpeg" 
     }
 ];
 
 return (
-    <section className="py-24 bg-white text-altivea-blue">
-    <div className="max-w-6xl mx-auto px-6">
+    <section className="py-24 bg-white text-slate-900">
+    <div className="max-w-7xl mx-auto px-6">
         
         <div className="text-center mb-20">
-        <h2 className="text-4xl font-black mb-4">Proyectos Destacados</h2>
-        <p className="text-slate-500 text-lg">Un vistazo a nuestras colaboraciones recientes.</p>
+        <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight mb-4">
+            Casos de Éxito
+        </h2>
+        <p className="text-slate-500 text-lg max-w-2xl mx-auto">
+            Resultados reales y medibles. Así es como ayudamos a las empresas a escalar su facturación y presencia digital.
+        </p>
         </div>
 
-        {/* GRID DE CASOS */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+        <div className="space-y-12">
         {casos.map((caso, index) => (
-            <div 
-            key={index} 
-            className="group relative h-[400px] rounded-2xl overflow-hidden cursor-pointer shadow-lg hover:shadow-2xl transition-all duration-500"
-            >
-            {/* FONDO CON GRADIENTE DE MARCA + ICONO */}
-            {/* Nota: cuando tengas fotos reales de cada proyecto, reemplaza este bloque por <img src="/tu-foto.jpg" ... /> */}
-            <div className="absolute inset-0 bg-gradient-to-br from-altivea-blue to-altivea-blueLight">
-                <div className="absolute -right-6 -bottom-6 text-white/10 transition-transform duration-700 group-hover:scale-110 group-hover:text-white/15">
-                {caso.icon}
+            <div key={index} className="flex flex-col lg:flex-row bg-slate-900 rounded-3xl overflow-hidden shadow-2xl border border-slate-800 group">
+            
+            {/* LADO IZQUIERDO: IMAGEN */}
+            <div className="lg:w-1/2 relative h-64 lg:h-auto overflow-hidden bg-slate-800">
+                <div className="absolute inset-0 bg-slate-800 flex items-center justify-center text-slate-600">
+                    <img 
+                        src={caso.imagenRuta} 
+                        alt={caso.cliente}
+                        className="w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700 ease-out"
+                    />
                 </div>
-                <div className="absolute inset-0 bg-altivea-blue/50 group-hover:bg-altivea-blue/30 transition-colors duration-500" />
+                
+                <div className="absolute inset-0 bg-gradient-to-t lg:bg-gradient-to-r from-slate-900 via-slate-900/60 to-transparent"></div>
+                
+                <div className="absolute top-6 left-6 bg-white/10 backdrop-blur-md border border-white/20 text-white text-xs font-bold px-4 py-2 rounded-full uppercase tracking-wider">
+                {caso.servicio}
+                </div>
             </div>
 
-            {/* CONTENIDO TEXTO */}
-            <div className="absolute inset-0 p-8 flex flex-col justify-between z-10 text-white">
+            {/* LADO DERECHO: DATOS Y GRÁFICO */}
+            <div className="lg:w-1/2 p-8 lg:p-12 flex flex-col justify-center relative">
                 
-                {/* Header Card */}
-                <div className="flex justify-between items-start translate-y-0 transition-transform duration-500">
+                <div className="flex justify-between items-start mb-4">
                 <div>
-                    <span className="text-altivea-accent2 font-bold text-sm tracking-wider uppercase mb-2 block">{caso.servicio}</span>
-                    <h3 className="text-3xl font-bold">{caso.cliente}</h3>
+                    <span className={`text-sm font-semibold tracking-wider uppercase mb-2 block ${caso.colorTema === 'emerald' ? 'text-emerald-400' : 'text-blue-400'}`}>
+                    {caso.tiempo}
+                    </span>
+                    <h3 className="text-3xl lg:text-4xl font-bold text-white mb-4 leading-tight">
+                    {caso.cliente}
+                    </h3>
+                    <p className="text-slate-400 text-sm leading-relaxed mb-8 max-w-md">
+                    {caso.desc}
+                    </p>
                 </div>
-                <div className="bg-white/10 p-2 rounded-full backdrop-blur-sm group-hover:bg-altivea-accent transition-colors">
+                <div className="hidden sm:flex bg-white/5 p-3 rounded-full group-hover:bg-white/10 transition-colors">
                     <ArrowUpRight size={24} className="text-white" />
                 </div>
                 </div>
 
-                {/* Resultado Gigante (Aparece al hover o siempre visible) */}
-                <div className="mt-auto">
-                    <div className="text-5xl font-black mb-2 text-transparent bg-clip-text bg-gradient-to-r from-white to-altivea-accent2">
-                        {caso.resultado}
+                {/* Bloque de Métricas (AQUÍ ESTÁ LA MAGIA RESPONSIVE) */}
+                <div className="grid grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-4 mb-2">
+                
+                {/* Esta métrica principal toma las 2 columnas en celular, y 1 columna en PC */}
+                <div className="col-span-2 lg:col-span-1">
+                    <div className={`text-5xl font-black mb-1 ${caso.colorTema === 'emerald' ? 'text-emerald-400' : 'text-blue-400'}`}>
+                    {caso.resultadoPrincipal}
                     </div>
-                    <p className="text-slate-300 text-sm max-w-md opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-500 delay-100">
-                        {caso.desc}
-                    </p>
+                    <div className="text-xs text-slate-500 uppercase tracking-wider font-semibold">
+                    {caso.labelResultado}
+                    </div>
                 </div>
+                
+                {/* Estas métricas toman 1 columna en celular (se ponen una al lado de la otra) */}
+                {caso.metricasSecundarias.map((metrica, idx) => (
+                    <div key={idx} className="col-span-1 border-l-2 border-slate-700 pl-4 flex flex-col justify-center">
+                    <div className="text-2xl font-bold text-white mb-1">{metrica.valor}</div>
+                    <div className="text-xs text-slate-500 uppercase tracking-wider font-semibold leading-tight">{metrica.label}</div>
+                    </div>
+                ))}
+                
+                </div>
+
+                {/* Integración del Gráfico Lineal */}
+                <LinearGrowthChart colorStr={caso.colorTema} />
 
             </div>
             </div>

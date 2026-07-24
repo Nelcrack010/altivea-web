@@ -5,20 +5,20 @@ import { Check } from 'lucide-react';
 export default function Paquetes() {
 // Ahora iniciamos en 'capacitacion' para que veas tus nuevos paquetes directamente
 const [departamentoActivo, setDepartamentoActivo] = useState('marketing'); 
-const [subcategoriaActiva, setSubcategoriaActiva] = useState('emprendedores');
+const [subcategoriaActiva, setSubcategoriaActiva] = useState('microempresas');
 
 // --- BASE DE DATOS ESTRUCTURADA ---
 const datosPaquetes = {
     marketing: {
-    nombre: "Marketing y Publicidad",
+    nombre: "Marketing/Comercial",
     subcategorias: {
-        emprendedores: {
-        nombre: "Emprendedores",
-        paquetes: [
-            { title: "Básico", price: "S/ 349.00", features: ["4 Videos mensuales", "1 Visita de producción", "Dirección, producción y edición", "Entregable HD e (Incluye entrevista general)"] },
-            { title: "Básico Pro", price: "S/ 749.00", features: ["8 Videos mensuales y 2 Historias sem.", "2 Visitas de producción", "Calendario y Plan de contenidos", "Gestión de RRSS (Básica)"] }
-        ]
-        },
+        // emprendedores: {
+        // nombre: "Emprendedores",
+        // paquetes: [
+        //     { title: "Básico", price: "S/ 349.00", features: ["4 Videos mensuales", "1 Visita de producción", "Dirección, producción y edición", "Entregable HD e (Incluye entrevista general)"] },
+        //     { title: "Básico Pro", price: "S/ 749.00", features: ["8 Videos mensuales y 2 Historias sem.", "2 Visitas de producción", "Calendario y Plan de contenidos", "Gestión de RRSS (Básica)"] }
+        // ]
+        // },
         microempresas: {
         nombre: "Microempresas",
         paquetes: [
@@ -38,64 +38,64 @@ const datosPaquetes = {
         }
     }
     },
-    innovacion: {
-    nombre: "Innovación y Creatividad",
-    subcategorias: {
-        naturales: {
-        nombre: "Personas Naturales",
-        paquetes: [
-            { title: "Clásico", price: "S/ 500.00", features: ["Duración: 2 Meses", "Levantamiento de necesidad e Inv. secundaria", "Encuesta corta (hasta 50 respuestas)", "Análisis de demanda y Mini resumen"] },
-            { title: "Pro", price: "S/ 900.00", features: ["Duración: 3 Meses", "Todo el paquete Clásico", "Encuesta ampliada y Perfilamiento de cliente", "Benchmark local y Recomendaciones"] }
-        ]
-        },
-        emprendimientos: {
-        nombre: "Emprendimientos",
-        paquetes: [
-            { title: "Clásico", price: "S/ 1,200.00", features: ["Duración: 2 Meses", "Diagnóstico de negocio y Análisis sectorial", "Encuestas (100) o Entrevistas (5-8)", "Identificación de competidores e Informe"] },
-            { title: "Pro", price: "S/ 1,900.00", features: ["Duración: 4 Meses", "Todo el paquete Clásico + Sesiones estratégicas", "Segmentación y Estimación de demanda", "Adicional: Benchmarking y Mini roadmap"] }
-        ]
-        },
-        formalizacion: {
-        nombre: "Formalización",
-        paquetes: [
-            { title: "Clásico", price: "S/ 2,200.00", features: ["Duración: 3 Meses", "Análisis de mercado local y posicionamiento", "Benchmark competitivo", "Evaluación de oportunidades e Informe"] },
-            { title: "Pro", price: "S/ 3,000.00", features: ["Duración: 5 Meses", "Todo el paquete Clásico + Sesiones estratégicas", "Focus group / Entrevistas a profundidad", "Adicional: Elaboración de KPIs y Roadmap"] }
-        ]
-        },
-        b2b: {
-        nombre: "Segmento B2B",
-        paquetes: [
-            { title: "Clásico", price: "S/ 3,300.00", features: ["Duración: 4 Meses", "Análisis sectorial y Clientes potenciales", "Evaluación y Benchmarking competitivo", "Informe estratégico final"] },
-            { title: "Pro", price: "S/ 4,200.00", features: ["Duración: 6 Meses", "Todo el paquete Clásico + Inv. mixta", "Segmentación avanzada y Modelado", "Presentación ejecutiva + Roadmap"] }
-        ]
-        }
-    }
-    },
-    finanzas: {
-    nombre: "Finanzas",
-    subcategorias: {
-        emprendedores: {
-        nombre: "Emprendedores",
-        paquetes: [
-            { title: "Ventas Básico", price: "S/ 500.00", features: ["Duración: 3 sesiones (1.5 h c/u)", "Comunicación y persuasión", "Manejo de objeciones frecuentes", "Técnicas simples de cierre"] },
-            { title: "Ventas Pro", price: "S/ 800.00", features: ["Duración: 3 sesiones (1.5 - 2 h c/u)", "Ventas emocionales y cierre avanzado", "Trabajo con casos reales del negocio", "Feedback personalizado"] },
-            { title: "Atención al Cliente Básico", price: "S/ 500.00", features: ["Duración: 3 sesiones (1.5 h c/u)", "Empatía y manejo de emociones", "Resolución básica de quejas", "Role play de atención al cliente"] },
-            { title: "Atención al Cliente Pro", price: "S/ 800.00", features: ["Duración: 3 sesiones (1.5 - 2 h c/u)", "Atención alineada a identidad de marca", "Manejo avanzado de clientes difíciles", "Diseño de protocolos simples"] }
-        ]
-        },
-        pymes: {
-        nombre: "PYMES",
-        paquetes: [
-            { title: "Ventas Básico", price: "S/ 900.00", features: ["Duración: 3 sesiones (2 h c/u)", "Ventas consultivas para PYMES", "Manejo de objeciones comerciales", "Talleres y ejercicios comerciales"] },
-            { title: "Ventas Pro", price: "S/ 1,200.00", features: ["Duración: 4 sesiones (2 - 3 h c/u)", "Optimización del proceso comercial", "Trabajo con pipeline real", "Estrategias de fidelización"] },
-            { title: "Coaching Básico", price: "S/ 1,200.00", features: ["Duración: 4 sesiones (2 h c/u)", "Coaching estratégico organizacional", "Manejo básico de conflictos", "Dinámicas de equipo"] },
-            { title: "Coaching Pro", price: "S/ 1,600.00", features: ["Duración: 5 sesiones (2 h c/u)", "Diagnóstico organizacional inicial", "Liderazgo y toma de decisiones", "Acompañamiento a líderes clave"] },
-            { title: "Atención Básico", price: "S/ 800.00", features: ["Duración: 3 sesiones (2 h c/u)", "Estrategias orientadas a CX", "Manejo de quejas y reclamos", "Simulaciones de servicio"] },
-            { title: "Atención Pro", price: "S/ 1,200.00", features: ["Duración: 4 sesiones (2 - 3 h c/u)", "Diagnóstico de experiencia del cliente", "Manejo de clientes complejos", "Plan de fidelización y satisfacción"] }
-        ]
-        }
-    }
-    },
+    // innovacion: {
+    // nombre: "Innovación y Creatividad",
+    // subcategorias: {
+    //     naturales: {
+    //     nombre: "Personas Naturales",
+    //     paquetes: [
+    //         { title: "Clásico", price: "S/ 500.00", features: ["Duración: 2 Meses", "Levantamiento de necesidad e Inv. secundaria", "Encuesta corta (hasta 50 respuestas)", "Análisis de demanda y Mini resumen"] },
+    //         { title: "Pro", price: "S/ 900.00", features: ["Duración: 3 Meses", "Todo el paquete Clásico", "Encuesta ampliada y Perfilamiento de cliente", "Benchmark local y Recomendaciones"] }
+    //     ]
+    //     },
+    //     emprendimientos: {
+    //     nombre: "Emprendimientos",
+    //     paquetes: [
+    //         { title: "Clásico", price: "S/ 1,200.00", features: ["Duración: 2 Meses", "Diagnóstico de negocio y Análisis sectorial", "Encuestas (100) o Entrevistas (5-8)", "Identificación de competidores e Informe"] },
+    //         { title: "Pro", price: "S/ 1,900.00", features: ["Duración: 4 Meses", "Todo el paquete Clásico + Sesiones estratégicas", "Segmentación y Estimación de demanda", "Adicional: Benchmarking y Mini roadmap"] }
+    //     ]
+    //     },
+    //     formalizacion: {
+    //     nombre: "Formalización",
+    //     paquetes: [
+    //         { title: "Clásico", price: "S/ 2,200.00", features: ["Duración: 3 Meses", "Análisis de mercado local y posicionamiento", "Benchmark competitivo", "Evaluación de oportunidades e Informe"] },
+    //         { title: "Pro", price: "S/ 3,000.00", features: ["Duración: 5 Meses", "Todo el paquete Clásico + Sesiones estratégicas", "Focus group / Entrevistas a profundidad", "Adicional: Elaboración de KPIs y Roadmap"] }
+    //     ]
+    //     },
+    //     b2b: {
+    //     nombre: "Segmento B2B",
+    //     paquetes: [
+    //         { title: "Clásico", price: "S/ 3,300.00", features: ["Duración: 4 Meses", "Análisis sectorial y Clientes potenciales", "Evaluación y Benchmarking competitivo", "Informe estratégico final"] },
+    //         { title: "Pro", price: "S/ 4,200.00", features: ["Duración: 6 Meses", "Todo el paquete Clásico + Inv. mixta", "Segmentación avanzada y Modelado", "Presentación ejecutiva + Roadmap"] }
+    //     ]
+    //     }
+    // }
+    // },
+    // finanzas: {
+    // nombre: "Finanzas",
+    // subcategorias: {
+    //     emprendedores: {
+    //     nombre: "Emprendedores",
+    //     paquetes: [
+    //         { title: "Ventas Básico", price: "S/ 500.00", features: ["Duración: 3 sesiones (1.5 h c/u)", "Comunicación y persuasión", "Manejo de objeciones frecuentes", "Técnicas simples de cierre"] },
+    //         { title: "Ventas Pro", price: "S/ 800.00", features: ["Duración: 3 sesiones (1.5 - 2 h c/u)", "Ventas emocionales y cierre avanzado", "Trabajo con casos reales del negocio", "Feedback personalizado"] },
+    //         { title: "Atención al Cliente Básico", price: "S/ 500.00", features: ["Duración: 3 sesiones (1.5 h c/u)", "Empatía y manejo de emociones", "Resolución básica de quejas", "Role play de atención al cliente"] },
+    //         { title: "Atención al Cliente Pro", price: "S/ 800.00", features: ["Duración: 3 sesiones (1.5 - 2 h c/u)", "Atención alineada a identidad de marca", "Manejo avanzado de clientes difíciles", "Diseño de protocolos simples"] }
+    //     ]
+    //     },
+    //     pymes: {
+    //     nombre: "PYMES",
+    //     paquetes: [
+    //         { title: "Ventas Básico", price: "S/ 900.00", features: ["Duración: 3 sesiones (2 h c/u)", "Ventas consultivas para PYMES", "Manejo de objeciones comerciales", "Talleres y ejercicios comerciales"] },
+    //         { title: "Ventas Pro", price: "S/ 1,200.00", features: ["Duración: 4 sesiones (2 - 3 h c/u)", "Optimización del proceso comercial", "Trabajo con pipeline real", "Estrategias de fidelización"] },
+    //         { title: "Coaching Básico", price: "S/ 1,200.00", features: ["Duración: 4 sesiones (2 h c/u)", "Coaching estratégico organizacional", "Manejo básico de conflictos", "Dinámicas de equipo"] },
+    //         { title: "Coaching Pro", price: "S/ 1,600.00", features: ["Duración: 5 sesiones (2 h c/u)", "Diagnóstico organizacional inicial", "Liderazgo y toma de decisiones", "Acompañamiento a líderes clave"] },
+    //         { title: "Atención Básico", price: "S/ 800.00", features: ["Duración: 3 sesiones (2 h c/u)", "Estrategias orientadas a CX", "Manejo de quejas y reclamos", "Simulaciones de servicio"] },
+    //         { title: "Atención Pro", price: "S/ 1,200.00", features: ["Duración: 4 sesiones (2 - 3 h c/u)", "Diagnóstico de experiencia del cliente", "Manejo de clientes complejos", "Plan de fidelización y satisfacción"] }
+    //     ]
+    //     }
+    // }
+    // },
     tecnologia: {
     nombre: "Tecnología",
     paquetes: [
@@ -114,6 +114,21 @@ const tieneSubmenu = !!deptActual.subcategorias;
 const paquetesActivos = tieneSubmenu 
     ? deptActual.subcategorias[subcategoriaActiva]?.paquetes || [] 
     : deptActual.paquetes;
+
+// --- LÓGICA DE WHATSAPP ---
+const handleCotizar = (paquete) => {
+    const numeroWhatsApp = "51958176903";
+    let categoriaTexto = deptActual.nombre;
+    
+    if (tieneSubmenu) {
+    const subcategoriaTexto = deptActual.subcategorias[subcategoriaActiva].nombre;
+    categoriaTexto = `${categoriaTexto} - ${subcategoriaTexto}`;
+    }
+
+    const mensaje = `¡Hola equipo de Altivea Group! 👋%0A%0AEstoy interesado en cotizar el paquete *${paquete.title}* de la categoría *${categoriaTexto}*. %0A%0AMe gustaría recibir más información al respecto. ¡Gracias!`;
+    
+    window.open(`https://wa.me/${numeroWhatsApp}?text=${mensaje}`, '_blank');
+};
 
 // --- GRID DINÁMICO ---
 let gridClasses = "lg:grid-cols-3 max-w-6xl mx-auto"; 
@@ -134,7 +149,7 @@ return (
         </p>
         </div>
 
-        {/* --- 1. MENÚ PRINCIPAL (ESTILO PREMIUM AGENCIA) --- */}
+        {/* --- 1. MENÚ PRINCIPAL --- */}
         <div className="flex flex-wrap justify-center gap-4 mb-8">
         {Object.keys(datosPaquetes).map((key) => (
             <button
@@ -146,12 +161,9 @@ return (
                 setSubcategoriaActiva(primerSubMenu);
                 }
             }}
-            // Estilo base: Bordes xl (menos redondos), fuente semibold y tracking (espaciado)
             className={`px-7 py-3.5 rounded-xl font-semibold tracking-wide transition-all duration-300 border-2 ${
                 departamentoActivo === key
-                // Activo: Fondo oscuro corporativo (slate-900), sombra sutil y ligero salto hacia arriba
                 ? 'border-altivea-blue bg-altivea-blue text-white shadow-xl shadow-altivea-blue/20 -translate-y-1'
-                // Inactivo: Transparente con borde gris sutil, al pasar el mouse se oscurece el borde
                 : 'border-slate-200 bg-transparent text-slate-500 hover:border-altivea-blue hover:text-altivea-blue hover:bg-slate-50'
             }`}
             >
@@ -160,19 +172,16 @@ return (
         ))}
         </div>
 
-        {/* --- 2. SUBMENÚ CONDICIONAL (ESTILO MINIMALISTA) --- */}
+        {/* --- 2. SUBMENÚ CONDICIONAL --- */}
         {tieneSubmenu && (
         <div className="flex flex-wrap justify-center gap-3 mb-12 animate-fade-in-up">
             {Object.keys(deptActual.subcategorias).map((subKey) => (
             <button
                 key={subKey}
                 onClick={() => setSubcategoriaActiva(subKey)}
-                // Estilo base: Más pequeño (rounded-lg) para diferenciarlo del menú principal
                 className={`px-5 py-2 rounded-lg text-sm font-medium transition-all duration-300 border ${
                 subcategoriaActiva === subKey
-                    // Activo: Azul eléctrico para diferenciarlo del navy del menú principal
                     ? 'border-altivea-accent bg-altivea-accent text-white shadow-md'
-                    // Inactivo: Blanco limpio con borde suave
                     : 'border-slate-200 bg-white text-slate-500 hover:border-slate-400 hover:text-altivea-blue'
                 }`}
             >
@@ -208,7 +217,11 @@ return (
                 ))}
             </ul>
 
-            <button className="w-full py-3 rounded-xl font-bold bg-white text-altivea-blue hover:bg-altivea-accent hover:text-white transition-colors duration-300 mt-auto">
+            {/* AQUÍ SE EJECUTA LA MAGIA DEL WHATSAPP AL HACER CLIC */}
+            <button 
+                onClick={() => handleCotizar(pkg)}
+                className="w-full py-3 rounded-xl font-bold bg-white text-altivea-blue hover:bg-altivea-accent hover:text-white transition-colors duration-300 mt-auto"
+            >
                 Cotizar ahora
             </button>
             </div>
