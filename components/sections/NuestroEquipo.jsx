@@ -8,22 +8,22 @@ const teamMembers = [
     { 
         name: "Liz Montalico", 
         role: "Dep. Finanzas", 
-        img: "/foto-luz.jpg", // <-- Sube esta foto a /public cuando la tengas
-        hasPhoto: false, // <-- Cambia a true en cuanto subas la foto real
+        img: "/LIZ.jpeg", // <-- Sube esta foto a /public cuando la tengas
+        hasPhoto: true, // <-- Cambia a true en cuanto subas la foto real
         initials: "LM",
         delay: 100,
-        position: "object-[center_80%]",
-        linkedin: "https://www.linkedin.com/in/tu-perfil", // <-- Reemplazar
-        mail: "mailto:liz@altiveagroup.com", // <-- Reemplazar con el correo
+        position: "object-[center_60%]",
+        linkedin: "https://www.linkedin.com/in/liz-montalico/", // <-- Reemplazar
+        mail: "mailto:lizmontalico@hotmail.com", // <-- Reemplazar con el correo
     },
     { 
-        name: "Mauricio Guerrero", 
-        role: "Dep. I+D", 
-        img: "/MAURICIO.jpg", 
+        name: "Juan Carlos Lucar", 
+        role: "Dep. Comercial", 
+        img: "/JUAN-CARLOS.png",
         delay: 200,
-        position: "object-[center_80%]",
-        linkedin: "http://www.linkedin.com/in/mauricio-guerrero-toscanelli-46a05a336",
-        mail: "https://mail.google.com/mail/?view=cm&fs=1&to=mauricioguerrerotoscanelli@gmail.com",
+        position: "object-[center_10%]",
+        linkedin: "https://www.linkedin.com/in/juan-carlos-lucar-carrillo-b70229361/",
+        mail: "mailto:juanclcarlos9@gmail.com",
     },
     { 
         name: "Eduardo Ortiz", 
@@ -41,7 +41,7 @@ const teamMembers = [
         delay: 400,
         position: "object-[center_60%]",
         linkedin: "https://www.linkedin.com/in/nelson-andr%C3%A9-junior-juarez-llatas-37a6523b5/",
-        mail: "https://mail.google.com/mail/?view=cm&fs=1&to=njuarezllatas@gmail.com",
+        mail: "mailto:njuarezllatas@gmail.com",
     },
 ];
 

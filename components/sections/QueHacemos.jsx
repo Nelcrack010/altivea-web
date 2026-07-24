@@ -1,75 +1,110 @@
 import React from 'react';
-import { Megaphone, Code, Briefcase } from 'lucide-react';
-import ScrollReveal from './ScrollReveal'; // <--- Importante
+import { ArrowRight } from 'lucide-react';
+import ScrollReveal from './ScrollReveal'; 
 
 export default function QueHacemos() {
 const services = [
-{
-    icon: <Megaphone size={64} strokeWidth={1.5} />,
-    title: "Marketing Digital",
-    description: "Estrategias que conectan marcas con clientes ideales.",
-    delay: 0 // Aparece de inmediato
-},
-{
-    icon: <Code size={64} strokeWidth={1.5} />,
-    title: "Desarrollo Web",
-    description: "Sitios rápidos, modernos y optimizados para ventas.",
-    delay: 200 // Espera 200ms
-},
-{
-    icon: <Briefcase size={64} strokeWidth={1.5} />,
-    title: "Automatización",
-    description: "Sistemas modernos y soluciones escalables.",
-    delay: 400 // Espera 400ms (Efecto escalera)
-}
+    {
+    number: "01",
+    title: "ALTIVEA CONSULTING",
+    description: [
+        "Analizamos tu empresa, mercado y oportunidades de crecimiento.",
+        "Desarrollamos estrategias innovadoras y personalizadas.",
+        "Implementamos acciones que fortalecen tu marca y generan resultados."
+    ],
+    delay: 0 
+    },
+    {
+    number: "02",
+    title: "ALTIVEA AGENCY",
+    description: [
+        "Estudios de mercado.",
+        "Plan de marketing.",
+        "Posicionamiento de marca.",
+        "Producción audiovisual.",
+        "Diseño gráfico.",
+        "Gestión de redes sociales.",
+        "Reportes de resultados.",
+        "Análisis de métricas y KPIS."
+    ],
+    delay: 200 
+    },
+    {
+    number: "03",
+    title: "ALTIVEA TRAINING",
+    description: [
+        "Capacitación en ventas.",
+        "Capacitación en atención al cliente - consumidor.",
+        "Capacitación en resolución de conflictos y liderazgo.",
+        "Talleres de entrenamiento comercial.",
+        "Desarrollo de eventos de networking."
+    ],
+    delay: 400 
+    }
 ];
 
 return (
-// CAMBIO 1: Fondo con un degradado sutil en vez de blanco puro
-<section className="py-24 bg-gradient-to-b from-white via-slate-50 to-white text-altivea-blue relative overflow-hidden">
+    <section className="py-24 bg-slate-50 text-slate-900 relative overflow-hidden">
     
-    {/* CAMBIO 2: Decoración de fondo (Mancha de color azul muy suave) */}
-    <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[500px] bg-altivea-accent2/10 blur-[120px] rounded-full -z-10" />
+    {/* Fondo sutil de la sección */}
+    <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[500px] bg-blue-500/5 blur-[120px] rounded-full -z-10" />
 
-    <div className="max-w-6xl mx-auto px-6">
-    
-    <ScrollReveal>
-        <h2 className="text-4xl md:text-5xl font-bold text-center mb-16 text-altivea-blue">
-        ¿Qué Hacemos?
-        </h2>
-    </ScrollReveal>
+    <div className="max-w-7xl mx-auto px-6">
+        
+        <ScrollReveal>
+        <div className="text-center mb-20">
+            <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight mb-4 text-slate-900">
+            ¿Qué Hacemos?
+            </h2>
+            <p className="text-slate-500 max-w-2xl mx-auto text-lg">
+            Soluciones integrales diseñadas para atraer, convertir y fidelizar clientes en el entorno digital.
+            </p>
+        </div>
+        </ScrollReveal>
 
-    <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
         {services.map((item, index) => (
-        // CAMBIO 3: Envolvemos cada tarjeta con su delay
-        <ScrollReveal key={index} delay={item.delay}>
-            <div 
-            className="group bg-white rounded-2xl p-10 border border-slate-100 shadow-sm 
-            transition-all duration-500 ease-out 
-            hover:-translate-y-4 hover:shadow-[0_20px_40px_-15px_rgba(37,99,235,0.2)] hover:border-altivea-accent/30 relative overflow-hidden"
-            >
-            {/* Barrita superior de color (Detalle Tech) */}
-            <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-altivea-accent to-altivea-accent2 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" />
+            <ScrollReveal key={index} delay={item.delay}>
+            
+            {/* Contenedor principal con efecto Glow */}
+            <div className="relative group h-full">
+                
+                <div className="absolute -inset-0.5 bg-gradient-to-r from-blue-600 to-cyan-400 rounded-[2rem] blur opacity-0 group-hover:opacity-30 transition duration-500"></div>
 
-            <div className="flex flex-col items-center text-center relative z-10">
-                <div className="mb-6 text-slate-400 transition-all duration-500 group-hover:text-altivea-accent group-hover:scale-110 group-hover:rotate-3">
-                {item.icon}
+                {/* Tarjeta Oscura Premium - Estilo Tipográfico */}
+                <div className="relative h-full bg-slate-900 rounded-[2rem] p-8 md:p-10 border border-slate-800 flex flex-col overflow-hidden">
+                
+                <div className="absolute -top-24 -right-24 w-48 h-48 bg-blue-600/20 rounded-full blur-3xl group-hover:bg-blue-500/30 transition-colors duration-700"></div>
+
+                {/* Cabecera de la Tarjeta (Número gigante + Título) */}
+                <div className="flex flex-col mb-8 relative z-10 border-b border-slate-700/50 pb-6">
+                    <span className="text-6xl font-black text-transparent bg-clip-text bg-gradient-to-r from-slate-700 to-slate-500 mb-2 group-hover:from-blue-500 group-hover:to-cyan-300 transition-all duration-500">
+                    {item.number}
+                    </span>
+                    <h3 className="text-2xl font-bold text-white group-hover:text-blue-400 transition-colors duration-300 leading-tight tracking-wide">
+                    {item.title}
+                    </h3>
+                </div>
+
+                {/* Lista de Servicios minimalista */}
+                <div className="relative z-10 flex-grow">
+                    <ul className="space-y-4">
+                    {item.description.map((point, idx) => (
+                        <li key={idx} className="flex items-start text-slate-400 text-sm leading-relaxed group-hover:text-slate-200 transition-colors duration-300">
+                        <ArrowRight size={16} className="mr-3 mt-1 text-slate-600 group-hover:text-blue-500 shrink-0 transition-colors duration-300" />
+                        <span>{point}</span>
+                        </li>
+                    ))}
+                    </ul>
                 </div>
                 
-                <h3 className="text-2xl font-bold mb-4 text-altivea-blue transition-colors duration-300 group-hover:text-altivea-accent">
-                {item.title}
-                </h3>
-                
-                <p className="text-slate-500 text-sm leading-relaxed max-w-xs group-hover:text-slate-600">
-                {item.description}
-                </p>
+                </div>
             </div>
-            </div>
-        </ScrollReveal>
+            </ScrollReveal>
         ))}
-    </div>
+        </div>
 
     </div>
-</section>
+    </section>
 );
 }

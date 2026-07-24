@@ -105,7 +105,7 @@ return (
         {/* BOTÓN CTA */}
         <div className="hidden md:block">
             <Link 
-                href="https://wa.me/51999999999" 
+                href="https://wa.me/51958176903" 
                 target="_blank"
                 className={`
                 px-6 py-2.5 rounded-full font-bold text-sm transition-all duration-300
@@ -170,7 +170,7 @@ return (
 
             {/* 2. BOTÓN PRINCIPAL */}
             <Link 
-                href="https://wa.me/51999999999"
+                href="https://wa.me/51958176903"
                 className="w-full bg-altivea-accent text-white py-4 rounded-xl font-bold text-lg text-center shadow-lg shadow-altivea-blue/50 hover:bg-altivea-accent active:scale-95 transition-all"
                 onClick={() => setIsOpen(false)}
             >

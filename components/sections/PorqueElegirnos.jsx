@@ -112,7 +112,7 @@ return (
                 <div>
                 {/* CAMBIO: Texto con degradado (Gradient Text) */}
                 <span className="flex items-baseline text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-altivea-accent to-altivea-accent2 mb-2">
-                    +<AnimatedNumber end={50} />
+                    +<AnimatedNumber end={40} />
                 </span>
                 <span className="text-slate-500 text-xs font-bold uppercase tracking-widest">
                     Proyectos Entregados
@@ -122,7 +122,7 @@ return (
                 {/* Stat 2 */}
                 <div>
                 <span className="flex items-baseline text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-altivea-accent to-altivea-accent2 mb-2">
-                    +<AnimatedNumber end={5} duration={1000} />
+                    +<AnimatedNumber end={4} duration={1000} />
                 </span>
                 <span className="text-slate-500 text-xs font-bold uppercase tracking-widest">
                     Años de Experiencia
@@ -132,7 +132,7 @@ return (
                 {/* Stat 3 */}
                 <div>
                 <span className="flex items-baseline text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-altivea-accent to-altivea-accent2 mb-2">
-                    <AnimatedNumber end={98} />%
+                    <AnimatedNumber end={95} />%
                 </span>
                 <span className="text-slate-500 text-xs font-bold uppercase tracking-widest">
                     Clientes Satisfechos

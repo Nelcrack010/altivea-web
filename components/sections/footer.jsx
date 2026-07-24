@@ -81,11 +81,11 @@ return (
             <ul className="flex flex-col gap-4 text-slate-400">
                 <li className="flex items-center gap-3">
                 <Mail size={16} />
-                <span>hola@altiveagroup.com</span>
+                <span>altiveagroup@gmail.com</span>
                 </li>
                 <li className="flex items-center gap-3">
                 <Phone size={16} />
-                <span>+51 999 999 999</span>
+                <span>+51 958 176 903</span>
                 </li>
                 <li className="flex items-center gap-3">
                 <MapPin size={16} />
