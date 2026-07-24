@@ -3,8 +3,7 @@
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { Menu, X, Zap, TrendingUp, Users, ArrowRight, Mail, MapPin } from 'lucide-react'; 
-
+import { Menu, X, Zap, TrendingUp, Users, ArrowRight, Mail, MapPin, Home } from 'lucide-react'; 
 // --- 1. COMPONENTE DE ENLACE MÓVIL ---
 const MobileNavLink = ({ href, icon, title, subtitle, onClick }: any) => {
 return (
@@ -85,13 +84,11 @@ return (
                 className="object-contain group-hover:scale-110 transition-transform duration-300 brightness-0 invert" 
             />
             </div>
-            <span className="font-bold text-xl tracking-tight text-white hidden md:block">
-            ALTIVEA
-            </span>
         </Link>
         
         {/* MENÚ ESCRITORIO */}
         <div className="hidden md:flex items-center gap-10">
+            <NavLink href="/">Inicio</NavLink>
             <NavLink href="/soluciones">Soluciones</NavLink>
             <NavLink href="/resultados">Resultados</NavLink>
             <NavLink href="/agencia">Agencia</NavLink>
@@ -129,7 +126,7 @@ return (
     {/* --- MENÚ MÓVIL DESPLEGABLE (CORREGIDO) --- */}
     {/* Ahora ocupa 100vh desde arriba, se pone borroso atrás y aparece con un suave desvanecimiento */}
     <div className={`
-        md:hidden fixed inset-0 z-40 bg-altivea-blue/98 backdrop-blur-2xl
+        md:hidden fixed inset-0 z-40 bg-altivea-blue/95 backdrop-blur-xl
         transition-all duration-300 ease-in-out
         ${isOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'}
     `}>
@@ -138,6 +135,13 @@ return (
         <div className={`flex flex-col h-full px-6 pt-24 pb-12 overflow-y-auto transition-transform duration-500 delay-100 ${isOpen ? 'translate-y-0' : 'translate-y-8'}`}>
         
         <div className="flex flex-col gap-3 mt-4">
+            <MobileNavLink 
+                href="/" 
+                icon={<Home size={20} />} 
+                title="Inicio" 
+                subtitle="Página principal"
+                onClick={() => setIsOpen(false)}
+            />
             <MobileNavLink 
             href="/soluciones" 
             icon={<Zap size={20} />} 

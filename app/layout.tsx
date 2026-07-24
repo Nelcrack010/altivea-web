@@ -10,8 +10,8 @@ const inter = Inter({ subsets: ["latin"], variable: '--font-inter'});
 const monserrat = Montserrat({ subsets: ["latin"], variable: '--font-montserrat' });
 
 export const metadata: Metadata = {
-  title: "Altivea Group | Marketing y Tecnología",
-  description: "Agencia de Marqueting Digital y Desarrollo web en Perú",
+  title: "Altivea Group | Marketing Digital",
+  description: "Agencia de Marqueting Digital",
 };
 
 export default function RootLayout({
