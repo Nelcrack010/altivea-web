@@ -10,33 +10,79 @@ const [subcategoriaActiva, setSubcategoriaActiva] = useState('microempresas');
 // --- BASE DE DATOS ESTRUCTURADA ---
 const datosPaquetes = {
     marketing: {
-    nombre: "Marketing/Comercial",
-    subcategorias: {
-        // emprendedores: {
-        // nombre: "Emprendedores",
-        // paquetes: [
-        //     { title: "Básico", price: "S/ 349.00", features: ["4 Videos mensuales", "1 Visita de producción", "Dirección, producción y edición", "Entregable HD e (Incluye entrevista general)"] },
-        //     { title: "Básico Pro", price: "S/ 749.00", features: ["8 Videos mensuales y 2 Historias sem.", "2 Visitas de producción", "Calendario y Plan de contenidos", "Gestión de RRSS (Básica)"] }
-        // ]
-        // },
-        microempresas: {
-        nombre: "Microempresas",
-        paquetes: [
-            { title: "Básico", price: "S/ 549.00", features: ["8 Videos mens. y 4 Fotos p/Historias", "2 Visitas de producción", "Dirección, producción y edición", "Entregable HD e (Incluye entrevista general)"] },
-            { title: "Pro", price: "S/ 949.00", features: ["8 Videos mens. y 2 Historias sem.", "3 Visitas prod. y 1 visita general", "Calendario y Plan de contenidos", "Gestión de RRSS y Mensajería"] }
-        ]
-        },
-        pymes: {
-        nombre: "Pequeñas y Medianas",
-        paquetes: [
-            { title: "Básico", price: "S/ 1,850.00", features: ["8 videos, 2 Shorts y 3 Historias sem.", "2 Visitas de producción", "Gestión de RRSS y Mensajería", "FODA cruzado (Incluye entrevista)"] },
-            { title: "Intermedio", price: "S/ 2,975.00", features: ["7 videos, 3 Shorts y 1 Historia diaria", "3 Visitas prod. y 1 de monitoreo", "Estudio de oportunidades", "Gestión RRSS (Intermedia) y Mensajería"] },
-            { title: "Avanzado", price: "S/ 3,845.00", features: ["8 videos, 4 Shorts y 3 Historias diarias", "4 Visitas prod. y 2 de monitoreo", "Gestión Avanzada (Meta Ads)", "Estudio de oportunidades y Benchmarking"] },
-            { title: "Premium", price: "S/ 4,975.00", features: ["Todo el paq. Avanzado (+2 videos, +1 Hist)", "1 Focus Group y Reporte ROI", "2 Consultorías Gestión Estratégica", "Incluye entrevista a profundidad"] },
-            { title: "VIP", price: "S/ 8,265.00", features: ["Todo lo que incluye el paquete Premium", "1 Campaña Local", "Informe de campaña", "Proyección estratégica"] }
-        ]
+        nombre: "Marketing/Comercial",
+        subcategorias: {
+            emprendedores: {
+                nombre: "Emprendedores",
+                paquetes: [
+                    { 
+                        title: "Básico", 
+                        price: "S/ 349.00", 
+                        features: ["4 Videos mensuales.", "1 Visita de producción.", "Dirección, producción y edición.", "Entregable (formato documento y HD).", "(Incluye entrevista general)"] 
+                    },
+                    { 
+                        title: "Básico Pro", 
+                        price: "S/ 749.00", 
+                        features: ["6 Videos mensuales y 2 Historias semanales.", "2 Visitas de producción.", "Calendario y Plan de contenidos.", "Gestión de redes sociales (básica).", "(Incluye entrevista general)"] 
+                    }
+                ]
+            },
+            microempresas: {
+                nombre: "Microempresas",
+                paquetes: [
+                    { 
+                        title: "Básico", 
+                        price: "S/ 549.00", 
+                        features: ["6 Videos mensuales.", "2 Visitas de producción y 4 Fotos para historia.", "Dirección, producción y edición.", "Entregable (formato documento y HD).", "(Incluye entrevista general)"] 
+                    },
+                    { 
+                        title: "Pro", 
+                        price: "S/ 949.00", 
+                        features: ["8 Videos mensuales y 2 Historias semanales.", "3 Visitas de producción y 1 Visita general.", "Calendario y Plan de contenidos.", "Gestión de redes sociales (básica).", "(Incluye entrevista general)"] 
+                    }
+                ]
+            },
+            pymes: {
+                nombre: "Pequeñas y Medianas",
+                paquetes: [
+                    { 
+                        title: "Básico", 
+                        price: "S/ 1,850.00", 
+                        features: ["6 Videos, 2 Shorts y 3 Historias semanales.", "2 Visitas de producción.", "Calendario/Plan de contenidos.", "Gestión de RRSS (básica) y Mensajería.", "FODA Cruzado - Apartado.", "(Incluye entrevista general)"] 
+                    },
+                    { 
+                        title: "Intermedio", 
+                        price: "S/ 2,975.00", 
+                        features: ["7 Videos, 3 Shorts y 1 Historia diaria.", "3 Visitas de producción y 1 de monitoreo.", "Calendario/Plan de contenidos.", "Gestión de RRSS (intermedia) y Mensajería.", "Estudio de oportunidades y resultados.", "(Incluye entrevista a profundidad)"] 
+                    },
+                    { 
+                        title: "Avanzado", 
+                        price: "S/ 3,845.00", 
+                        features: ["8 Videos, 4 Shorts y 3 Historias diarias.", "4 Visitas de producción y 2 de monitoreo.", "Calendario/Plan de contenidos.", "Gestión de RRSS (avanzada - Meta ADS) y Mensajería.", "Estudio de oportunidades + Benchmarking.", "(Incluye entrevista a profundidad)"] 
+                    },
+                    { 
+                        title: "Premium", 
+                        price: "S/ 4,975.00", 
+                        features: ["Todo lo que incluye el PAQUETE AVANZADO (+2 videos + 1 historia diaria).", "1 Focus Group.", "Reportes de resultados de F.G.", "2 consultorías en Gestión Estratégica.", "(Incluye entrevista a profundidad)"] 
+                    },
+                    { 
+                        title: "VIP", 
+                        price: "S/ 8,265.00", 
+                        features: ["4 Videos mensuales y 1 Visita de producción.", "Todo lo que incluye el PAQUETE PREMIUM.", "1 campaña local.", "Proyección estratégica.", "(Incluye entrevista a profundidad)"] 
+                    }
+                ]
+            },
+            adicionales: {
+                nombre: "Adicionales",
+                paquetes: [
+                    { 
+                        title: "Servicios Adicionales", 
+                        price: "A Cotizar", 
+                        features: ["Rebranding.", "Estudio publicitario.", "Calendario y plan de contenidos.", "Campaña BTL.", "Consultoría en marketing, gestión comercial y ventas.", "Merchandising."] 
+                    }
+                ]
+            }
         }
-    }
     },
     // innovacion: {
     // nombre: "Innovación y Creatividad",
