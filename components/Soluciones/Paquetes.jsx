@@ -143,13 +143,29 @@ const datosPaquetes = {
     // }
     // },
     tecnologia: {
-    nombre: "Tecnología",
-    paquetes: [
-        { title: 'Servicio "Presence"', price: "S/ 1,500.00", features: ["Landing Page One-Page (5 secciones)", "Desarrollo en Next.js, SEO Básico", "Formulario de contacto y botón WhatsApp", "Optimización de velocidad e imágenes"] },
-        { title: 'Servicio Corporate Pro', price: "S/ 3,200.00", features: ["Web Multi-página Full-Stack", "CMS Básico Autoadministrable", "Integración con Google Analytics", "Diseño UI/UX 100% personalizado"] },
-        { title: 'Servicio Bot Lead', price: "S/ 1,200.00", features: ["Chatbot Inteligente WhatsApp/Web", "Árbol de conversación (3 ramas)", "Reporte automatizado en Google Sheets", "+ S/ 150.00 Mantenimiento mensual"] },
-        { title: 'Servicio E-commerce Advanced', price: "S/ 5,500.00", features: ["Tienda Online Completa", "Integración pasarela de pagos", "Panel control inventario y envíos", "Capacitación de 2 horas al equipo"] }
-    ]
+        nombre: "Tecnología",
+        paquetes: [
+            { 
+                title: 'Servicio Bot Lead', 
+                price: "S/ 1,200.00", 
+                features: ["Chatbot Inteligente WhatsApp/Web", "Árbol de conversación (3 ramas)", "Reporte automatizado en Google Sheets", "+ S/ 150.00 Mantenimiento mensual"] 
+            },
+            { 
+                title: 'Servicio "Presence"', 
+                price: "S/ 1,500.00", 
+                features: ["Landing Page One-Page (5 secciones)", "Desarrollo en Next.js, SEO Básico", "Formulario de contacto y botón WhatsApp", "Optimización de velocidad e imágenes"] 
+            },
+            { 
+                title: 'Servicio Corporate Pro', 
+                price: "S/ 3,200.00", 
+                features: ["Web Multi-página Full-Stack", "CMS Básico Autoadministrable", "Integración con Google Analytics", "Diseño UI/UX 100% personalizado"] 
+            },
+            { 
+                title: 'Servicio E-commerce Advanced', 
+                price: "S/ 5,500.00", 
+                features: ["Tienda Online Completa", "Integración pasarela de pagos", "Panel control inventario y envíos", "Capacitación de 2 horas al equipo"] 
+            }
+        ]
     }
 };
 
